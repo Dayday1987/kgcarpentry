@@ -271,6 +271,33 @@ footer {
 }
 
 /* ================================
+   REVIEWS
+================================ */
+
+.reviews {
+  display: grid;
+  gap: 15px;
+}
+
+.review {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.review p:first-child {
+  color: #f59e0b;
+  font-size: 18px;
+  margin: 0 0 5px;
+}
+
+@media (min-width: 768px) {
+  .reviews {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================================
    TABLET+
 ================================ */
 
