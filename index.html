@@ -18,6 +18,7 @@
   <nav id="nav">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
@@ -36,43 +37,71 @@
   </p>
 </section>
 
-  <section class="content">
+ <section class="content">
   <h2>Our Work</h2>
 
   <div class="slider">
 
-  <div class="slides" id="slides">
+    <div class="slides" id="slides">
 
-    <div class="slide">
-      <img src="images/work1.jpg">
-      <div class="overlay">Framing</div>
+      <div class="slide">
+        <img src="images/work1.JPG">
+        <div class="overlay">Framing</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work2.JPG">
+        <div class="overlay">Deck Build</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work3.JPG">
+        <div class="overlay">Trim Work</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work4.JPG">
+        <div class="overlay">Addition</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work5.JPG">
+        <div class="overlay">Carpentry</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work6.JPG">
+        <div class="overlay">Deck Repair</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work7.JPG">
+        <div class="overlay">Framing</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work8.JPG">
+        <div class="overlay">Trim</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work9.JPG">
+        <div class="overlay">Build</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/work10.HEIC">
+        <div class="overlay">Project</div>
+      </div>
+
     </div>
 
-    <div class="slide">
-      <img src="images/work2.jpg">
-      <div class="overlay">Deck Build</div>
-    </div>
+    <button class="prev" onclick="prevSlide()">❮</button>
+    <button class="next" onclick="nextSlide()">❯</button>
 
-    <div class="slide">
-      <img src="images/work3.jpg">
-      <div class="overlay">Trim Work</div>
-    </div>
+    <div class="dots" id="dots"></div>
 
-    <div class="slide">
-      <img src="images/work4.jpg">
-      <div class="overlay">Home Addition</div>
-    </div>
-
-    <!-- Repeat for all images -->
-    
   </div>
-
-  <button class="prev" onclick="prevSlide()">❮</button>
-  <button class="next" onclick="nextSlide()">❯</button>
-
-  <div class="dots" id="dots"></div>
-
-</div>
 </section>
 
   <section class="content">
@@ -109,8 +138,12 @@
   <a href="contact.html" class="cta-button secondary">Request a Quote</a>
 </section>
 
-<footer>
-  <p>© 2026 KG Carpentry</p>
+<footer class="footer">
+  <a href="#" class="back-to-top">BACK TO TOP</a>
+
+  <img src="images/logo.png" alt="KG Carpentry Logo" class="footer-logo">
+
+  <p>© Copyright 2026 K G CARPENTRY | Website by NovaDev Studio</p>
 </footer>
 
   <script>
