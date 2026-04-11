@@ -39,17 +39,28 @@
   <section class="content">
   <h2>Our Work</h2>
 
-  <div class="gallery">
-  <img src="images/work1.JPG" alt="Carpentry work" onclick="openLightbox(this)">
-  <img src="images/work2.JPG" alt="Deck build" onclick="openLightbox(this)">
-  <img src="images/work3.JPG" alt="Framing project" onclick="openLightbox(this)">
-  <img src="images/work4.JPG" alt="Trim work" onclick="openLightbox(this)">
-  <img src="images/work5.JPG" alt="Carpentry project" onclick="openLightbox(this)">
-  <img src="images/work6.JPG" alt="Carpentry project" onclick="openLightbox(this)">
-  <img src="images/work7.JPG" alt="Carpentry project" onclick="openLightbox(this)">
-  <img src="images/work8.JPG" alt="Carpentry project" onclick="openLightbox(this)">
-  <img src="images/work9.JPG" alt="Carpentry project" onclick="openLightbox(this)">
-  <img src="images/work10.HEIC" alt="Carpentry project" onclick="openLightbox(this)">
+  <div class="slider">
+
+  <div class="slides" id="slides">
+    <img src="images/work1.jpg">
+    <img src="images/work2.jpg">
+    <img src="images/work3.jpg">
+    <img src="images/work4.jpg">
+    <img src="images/work5.jpg">
+    <img src="images/work6.jpg">
+    <img src="images/work7.jpg">
+    <img src="images/work8.jpg">
+    <img src="images/work9.jpg">
+    <img src="images/work10.jpg">
+  </div>
+
+  <!-- Arrows -->
+  <button class="prev" onclick="prevSlide()">❮</button>
+  <button class="next" onclick="nextSlide()">❯</button>
+
+  <!-- Dots -->
+  <div class="dots" id="dots"></div>
+
 </div>
 </section>
 
@@ -92,9 +103,62 @@
 </footer>
 
   <script>
-  function toggleMenu() {
-    document.getElementById("nav").classList.toggle("active");
+  let index = 0;
+  let interval;
+
+  const slides = document.getElementById("slides");
+  const totalSlides = slides.children.length;
+  const dotsContainer = document.getElementById("dots");
+
+  // Create dots
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);
   }
+
+  const dots = dotsContainer.children;
+
+  function updateSlider() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+    dots[index].classList.add("active");
+  }
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  }
+
+  function goToSlide(i) {
+    index = i;
+    updateSlider();
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(nextSlide, 3000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(interval);
+  }
+
+  // Pause on hover (desktop)
+  const slider = document.querySelector(".slider");
+  slider.addEventListener("mouseenter", stopAutoSlide);
+  slider.addEventListener("mouseleave", startAutoSlide);
+
+  // Init
+  updateSlider();
+  startAutoSlide();
 </script>
 
 </body>
