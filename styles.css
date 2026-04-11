@@ -155,59 +155,33 @@ footer {
   }
 }
 
-/* ================================
-   GALLERY
+/* ===============================
+    slider with overlay
 ================================ */
+.slider { overflow: hidden; }
+.slides { display: flex; transition: transform 0.5s ease; }
 
-/* ================================
-   GALLERY GRID (MOBILE-FIRST)
-================================ */
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
-  gap: 10px;
+.slide {
+  min-width: 100%;
+  position: relative;
 }
 
-/* Images */
-.gallery img {
+.slide img {
   width: 100%;
-  height: 140px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
-/* Tablet */
-@media (min-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-   .gallery img {
-  transition: transform 0.2s ease;
+.overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
 }
-
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-  .gallery img {
-    height: 200px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .gallery {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .gallery img {
-    height: 250px;
-  }
-}
-
-/* ================================
+/* ===============================
    CTA SECTION
 ================================ */
 
