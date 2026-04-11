@@ -226,6 +226,22 @@ footer {
 }
 
 /* ================================
+   NAV HEADER (LOGO + HAMBURGER)
+================================ */
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* ================================
    TABLET+
 ================================ */
 
