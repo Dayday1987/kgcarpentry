@@ -256,3 +256,9 @@ footer {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+@media (min-width: 768px) {
+  .logo {
+    height: 50px;
+  }
+}
