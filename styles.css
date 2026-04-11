@@ -298,6 +298,55 @@ footer {
 }
 
 /* ================================
+   SLIDER CONTROLS
+================================ */
+
+.slider {
+  position: relative;
+}
+
+/* Arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots span.active {
+  background: var(--primary);
+}
+
+/* ================================
    TABLET+
 ================================ */
 
