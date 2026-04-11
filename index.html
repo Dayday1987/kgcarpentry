@@ -138,6 +138,10 @@
   <a href="contact.html" class="cta-button secondary">Request a Quote</a>
 </section>
 
+  <div class="cta-badge">
+  <a href="tel:+17065806300">📞 Call Now</a>
+</div>
+
 <footer class="footer">
   <a href="#" class="back-to-top">BACK TO TOP</a>
 
@@ -205,5 +209,18 @@
   startAutoSlide();
 </script>
 
+  <script>
+  const badge = document.querySelector(".cta-badge");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      badge.style.opacity = "1";
+      badge.style.pointerEvents = "auto";
+    } else {
+      badge.style.opacity = "0";
+      badge.style.pointerEvents = "none";
+    }
+  });
+</script>
 </body>
 </html>
