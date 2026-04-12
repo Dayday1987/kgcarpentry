@@ -49,6 +49,7 @@ header {
 
 .logo {
   height: 80px;
+   position: center;
 }
 
 .nav-toggle {
