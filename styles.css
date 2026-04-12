@@ -38,7 +38,8 @@ header {
   z-index: 1000;
   background: var(--primary);
   padding: 15px;
-   align-items: center
+   align-items: center;
+   align-content: center;
 }
 
 .nav-header {
