@@ -3,7 +3,7 @@
 ================================ */
 
 :root {
-  --primary: #1e40af;     /* smoother blue */
+  --primary: #f9fafb;          /* cleaner white */
   --accent: #fbbf24;      /* softer gold */
   --bg: #f9fafb;          /* cleaner white */
   --surface: #ffffff;
@@ -37,8 +37,8 @@ header {
   top: 0;
   z-index: 1000;
   background: var(--primary);
-  color: white;
   padding: 15px;
+   align-items: center
 }
 
 .nav-header {
@@ -48,7 +48,7 @@ header {
 }
 
 .logo {
-  height: 40px;
+  height: 80px;
 }
 
 .nav-toggle {
@@ -381,6 +381,6 @@ nav.active {
   }
 
   .logo {
-    height: 50px;
+    height: 80px;
   }
 }
