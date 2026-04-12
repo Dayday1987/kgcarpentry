@@ -46,13 +46,6 @@ header {
   align-items: center;
 }
 
-.logo {
-  height: 100px;
-   width: 30%;
-   position: center;
-   text-align: center;
-}
-
 .nav-toggle {
   font-size: 24px;
   cursor: pointer;
@@ -92,6 +85,18 @@ nav.active {
 }
 
 /* ================================
+   LOGO
+/* ================================
+
+.logo {
+  height: 100px;
+   width: 30%;
+   position: center;
+   text-align: center;
+   align-content: center;
+   aligbn-items: center;
+}
+
    HERO (UPGRADED)
 ================================ */
 
