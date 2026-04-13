@@ -6,11 +6,13 @@
   <title>KG Carpentry</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+<!-- ================= HEADER ================= -->
 
 <header>
   <div class="nav-header">
-
     <div class="nav-toggle" onclick="toggleMenu()">☰</div>
   </div>
 
@@ -21,68 +23,41 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
-</header>
-  <div class="logo">
-    <img src="images/logo.png" alt="KG Carpentry Logo" class="logo">
-    
-  </div>
 
-  <section class="content">
+  <!-- CENTERED LOGO -->
+  <div class="header-logo">
+    <img src="images/logo.png" alt="KG Carpentry Logo">
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>KG Carpentry</h1>
+    <p>Framing • Decks • Additions • Trim</p>
+    <a href="tel:+17065806300" class="hero-btn">Call Now</a>
+  </div>
+</section>
+
+<!-- ================= SLIDER ================= -->
+
+<section class="content">
   <h2>Our Work</h2>
 
   <div class="slider">
-
     <div class="slides" id="slides">
 
-      <div class="slide">
-        <img src="images/work1.JPG">
-        <div class="overlay">Framing</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work2.JPG">
-        <div class="overlay">Deck Build</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work3.JPG">
-        <div class="overlay">Trim Work</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work4.JPG">
-        <div class="overlay">Addition</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work5.JPG">
-        <div class="overlay">Carpentry</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work6.JPG">
-        <div class="overlay">Deck Repair</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work7.JPG">
-        <div class="overlay">Framing</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work8.JPG">
-        <div class="overlay">Trim</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work9.JPG">
-        <div class="overlay">Build</div>
-      </div>
-
-      <div class="slide">
-        <img src="images/work10.HEIC">
-        <div class="overlay">Project</div>
-      </div>
+      <div class="slide"><img src="images/work1.JPG"><div class="overlay">Framing</div></div>
+      <div class="slide"><img src="images/work2.JPG"><div class="overlay">Deck Build</div></div>
+      <div class="slide"><img src="images/work3.JPG"><div class="overlay">Trim Work</div></div>
+      <div class="slide"><img src="images/work4.JPG"><div class="overlay">Addition</div></div>
+      <div class="slide"><img src="images/work5.JPG"><div class="overlay">Carpentry</div></div>
+      <div class="slide"><img src="images/work6.JPG"><div class="overlay">Deck Repair</div></div>
+      <div class="slide"><img src="images/work7.JPG"><div class="overlay">Framing</div></div>
+      <div class="slide"><img src="images/work8.JPG"><div class="overlay">Trim</div></div>
+      <div class="slide"><img src="images/work9.JPG"><div class="overlay">Build</div></div>
+      <div class="slide"><img src="images/work10.HEIC"><div class="overlay">Project</div></div>
 
     </div>
 
@@ -90,32 +65,78 @@
     <button class="next" onclick="nextSlide()">❯</button>
 
     <div class="dots" id="dots"></div>
-
   </div>
 </section>
 
+<!-- ================= ABOUT ================= -->
+
 <section class="content">
-  <h3>Welcome</h3>
+  <h2>About Us</h2>
   <p>
     KG Carpentry provides reliable and professional carpentry services in Montgomery, Alabama.
-    We take pride in delivering high-quality work that lasts.
+    We take pride in delivering high-quality craftsmanship that lasts.
   </p>
 </section>
 
-  <section class="hero">
+<!-- ================= EARLY CTA ================= -->
 
-  <div class="hero-overlay">
-    <h1>KG Carpentry</h1>
-    <p>Framing • Decks • Additions • Trim</p>
+<section class="cta">
+  <h2>Call Today for a Free Estimate</h2>
+  <a href="tel:+17065806300" class="cta-button">Call Now</a>
+</section>
 
-    <a href="tel:+17065806300" class="hero-btn">Call Now</a>
+<!-- ================= SPLIT IMAGES ================= -->
+
+<section class="split-images">
+  <img src="images/work2.JPG">
+  <img src="images/work3.JPG">
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="content">
+  <h2>What We Do</h2>
+
+  <p>
+    We specialize in framing, decks, additions, trim work, and general carpentry projects.
+  </p>
+
+  <div class="services-grid">
+    <div>Framing</div>
+    <div>Decks</div>
+    <div>Additions</div>
+    <div>Trim Work</div>
   </div>
+
+  <a href="services.html" class="cta-button">View Services</a>
+</section>
+
+<!-- ================= FEATURED SERVICES ================= -->
+
+<section class="featured-services">
+
+  <div class="feature">
+    <img src="images/work2.JPG">
+    <h3>Custom Decks</h3>
+  </div>
+
+  <div class="feature">
+    <img src="images/work4.JPG">
+    <h3>Additions</h3>
+  </div>
+
+  <div class="feature">
+    <img src="images/work5.JPG">
+    <h3>Remodeling</h3>
+  </div>
+
+  <a href="gallery.html" class="cta-button">View Gallery</a>
 
 </section>
 
- 
+<!-- ================= REVIEWS ================= -->
 
-  <section class="content">
+<section class="content">
   <h2>Customer Reviews</h2>
 
   <div class="reviews">
@@ -141,97 +162,86 @@
   </div>
 </section>
 
-  <section class="cta">
-  <h2>Ready to Start Your Project?</h2>
-  <p>Call now or request a quote today.</p>
+<!-- ================= STRONG CTA ================= -->
 
-  <a href="tel:+17065806300" class="cta-button">Call Now</a>
-  <a href="contact.html" class="cta-button secondary">Request a Quote</a>
+<section class="cta strong">
+  <h2>Ready to Start Your Project?</h2>
+  <a href="contact.html" class="cta-button">Request a Quote</a>
 </section>
 
-  <div class="cta-badge">
-  <a href="tel:+17065806300">📞 Call Now</a>
-</div>
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
   <a href="#" class="back-to-top">BACK TO TOP</a>
 
   <img src="images/logo.png" alt="KG Carpentry Logo" class="footer-logo">
 
-  <p>© Copyright 2026 K G CARPENTRY | Website by NovaDev Studio</p>
+  <p>© Copyright 2026 KG Carpentry | Website by NovaDev Studio</p>
 </footer>
 
-  <script>
-  let index = 0;
-  let interval;
+<!-- ================= SCRIPTS ================= -->
 
-  const slides = document.getElementById("slides");
-  const totalSlides = slides.children.length;
-  const dotsContainer = document.getElementById("dots");
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+</script>
 
-  // Create dots
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement("span");
-    dot.addEventListener("click", () => goToSlide(i));
-    dotsContainer.appendChild(dot);
+<script>
+let index = 0;
+let interval;
+
+const slides = document.getElementById("slides");
+const totalSlides = slides.children.length;
+const dotsContainer = document.getElementById("dots");
+
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement("span");
+  dot.addEventListener("click", () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+}
+
+const dots = dotsContainer.children;
+
+function updateSlider() {
+  slides.style.transform = `translateX(-${index * 100}%)`;
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
   }
+  dots[index].classList.add("active");
+}
 
-  const dots = dotsContainer.children;
-
-  function updateSlider() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
-
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-    dots[index].classList.add("active");
-  }
-
-  function nextSlide() {
-    index = (index + 1) % totalSlides;
-    updateSlider();
-  }
-
-  function prevSlide() {
-    index = (index - 1 + totalSlides) % totalSlides;
-    updateSlider();
-  }
-
-  function goToSlide(i) {
-    index = i;
-    updateSlider();
-  }
-
-  function startAutoSlide() {
-    interval = setInterval(nextSlide, 3000);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(interval);
-  }
-
-  // Pause on hover (desktop)
-  const slider = document.querySelector(".slider");
-  slider.addEventListener("mouseenter", stopAutoSlide);
-  slider.addEventListener("mouseleave", startAutoSlide);
-
-  // Init
+function nextSlide() {
+  index = (index + 1) % totalSlides;
   updateSlider();
-  startAutoSlide();
+}
+
+function prevSlide() {
+  index = (index - 1 + totalSlides) % totalSlides;
+  updateSlider();
+}
+
+function goToSlide(i) {
+  index = i;
+  updateSlider();
+}
+
+function startAutoSlide() {
+  interval = setInterval(nextSlide, 3000);
+}
+
+function stopAutoSlide() {
+  clearInterval(interval);
+}
+
+const slider = document.querySelector(".slider");
+slider.addEventListener("mouseenter", stopAutoSlide);
+slider.addEventListener("mouseleave", startAutoSlide);
+
+updateSlider();
+startAutoSlide();
 </script>
 
-  <script>
-  const badge = document.querySelector(".cta-badge");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      badge.style.opacity = "1";
-      badge.style.pointerEvents = "auto";
-    } else {
-      badge.style.opacity = "0";
-      badge.style.pointerEvents = "none";
-    }
-  });
-</script>
 </body>
 </html>
