@@ -75,7 +75,8 @@ nav.active {
 .header-logo {
   display: flex;
   justify-content: center;
-   background: black;
+   padding: 15px
+   background: white;
 }
 
 .header-logo img {
