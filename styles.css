@@ -257,23 +257,82 @@ nav.active {
 }
 
 /* ================================
-   SPLIT IMAGES (NEW)
+   BEFORE & AFTER IMAGES
 ================================ */
-
-.split-images img,
-.feature img {
+.ba-slider {
+  position: relative;
   width: 100%;
-  height: auto;   /* shows full image */
+  max-width: 1100px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.ba-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-.split-images img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  background: white;
-  border-radius: 8px;
+.after-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* starting position /
+  height: 100%;
+  overflow: hidden;
 }
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: white;
+  cursor: ew-resize;
+}
+
+.ba-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+}
+
+/ Labels /
+.ba-label {
+  position: absolute;
+  top: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: white;
+  background: rgba(0,0,0,0.7);
+  border-radius: 4px;
+}
+
+.before-label { left: 10px; }
+.after-label { right: 10px; }
+
+/ Instruction */
+.ba-instruction {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 12px;
+  background: rgba(0,0,0,0.6);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
 
 /* ================================
    FEATURED SERVICES (NEW)
