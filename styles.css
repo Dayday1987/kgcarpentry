@@ -22,7 +22,7 @@ body {
 }
 
 section {
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 h1, h2, h3 {
@@ -50,19 +50,19 @@ h1, h2 {
    HEADER
 ================================ */
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: white;
-  padding: 15px;
-  border-bottom: 1px solid #e5e7eb;
-}
+/* top bar */
 
 .nav-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+   
+/* top bar */
+
+.nav-header {
+  position: absolute;
+  left: 15px;
+  top: 15px;
 }
 
 .nav-toggle {
@@ -89,21 +89,19 @@ nav.active {
   display: flex;
 }
 
-/* ================================
-   HEADER LOGO (FIXED)
-================================ */
+/* logo centered */
 
 .header-logo {
   display: flex;
   justify-content: center;
-   background: white;
+  align-items: center;
+  padding: 10px 0;
 }
 
 .header-logo img {
-  height: 100px;
-   width: 30%;
+  height: 80px;
+  width: auto;
 }
-
 /* ================================
    HERO
 ================================ */
@@ -156,8 +154,8 @@ nav.active {
 
 .content {
   max-width: 1100px;
-  margin: 20px auto;
-  padding: 30px 20px;
+  margin: 0px;
+  padding: 0;
   background: var(--surface);
   border-radius: 10px;
 }
@@ -185,11 +183,10 @@ nav.active {
 ================================ */
 
 .slider {
-  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   overflow: hidden;
-  max-width: 1100px;
-  margin: auto;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 .slides {
@@ -206,7 +203,7 @@ nav.active {
 
 .slide img {
   width: 100%;
-  height: 300px;
+  height: 60vh;
   object-fit: cover;
   display: block;
 }
@@ -236,33 +233,36 @@ nav.active {
 }
 
 .prev { left: 10px; }
-.next { right: 10px; }
-
-.dots {
+.next { right: .dots {
   text-align: center;
   margin-top: 10px;
 }
 
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
 .dots span {
-  width: 10px;
-  height: 10px;
-  background: #ccc;
-  margin: 5px;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.5);
   border-radius: 50%;
-  display: inline-block;
 }
 
 .dots span.active {
-  background: var(--primary);
+  background: white;
 }
 
 /* ================================
    BEFORE & AFTER IMAGES
 ================================ */
-/* ================================
-   BEFORE & AFTER IMAGES
-================================ /
-
+       
 .ba-slider {
   position: relative;
   width: 100%;
