@@ -291,6 +291,7 @@ const afterWrapper = document.getElementById("afterWrapper");
 const handle = document.getElementById("baHandle");
 
 let isDragging = false;
+let instructionHidden = false;
 
 function updatePosition(x) {
   const rect = slider.getBoundingClientRect();
@@ -303,24 +304,41 @@ function updatePosition(x) {
 
   afterWrapper.style.width = percent + "%";
   handle.style.left = percent + "%";
+
+  // Hide instruction ONCE
+  if (!instructionHidden) {
+    document.querySelector('.ba-instruction').style.opacity = '0';
+    instructionHidden = true;
+  }
 }
 
-// Mouse
-handle.addEventListener("mousedown", () => isDragging = true);
+// 🔥 Allow dragging ANYWHERE on the slider (better UX)
+slider.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  updatePosition(e.clientX);
+});
+
 window.addEventListener("mouseup", () => isDragging = false);
+
 window.addEventListener("mousemove", (e) => {
   if (!isDragging) return;
   updatePosition(e.clientX);
 });
 
-// Touch
-handle.addEventListener("touchstart", () => isDragging = true);
+// Touch support (mobile)
+slider.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  updatePosition(e.touches[0].clientX);
+});
+
 window.addEventListener("touchend", () => isDragging = false);
+
 window.addEventListener("touchmove", (e) => {
   if (!isDragging) return;
   updatePosition(e.touches[0].clientX);
 });
 </script>
+
 
 
 
