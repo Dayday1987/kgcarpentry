@@ -259,6 +259,10 @@ nav.active {
 /* ================================
    BEFORE & AFTER IMAGES
 ================================ */
+/* ================================
+   BEFORE & AFTER IMAGES
+================================ /
+
 .ba-slider {
   position: relative;
   width: 100%;
@@ -266,6 +270,7 @@ nav.active {
   height: 300px;
   overflow: hidden;
   border-radius: 10px;
+  cursor: ew-resize;
 }
 
 .ba-slider img {
@@ -279,7 +284,7 @@ nav.active {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%; /* starting position /
+  width: 50%; / starting position /
   height: 100%;
   overflow: hidden;
 }
@@ -291,7 +296,6 @@ nav.active {
   width: 3px;
   height: 100%;
   background: white;
-  cursor: ew-resize;
 }
 
 .ba-handle::after {
@@ -331,14 +335,7 @@ nav.active {
   background: rgba(0,0,0,0.6);
   padding: 4px 10px;
   border-radius: 4px;
-}
-
-.ba-instruction {
   transition: opacity 0.3s ease;
-}
-
-.ba-slider {
-  cursor: ew-resize;
 }
 
 /* ================================
