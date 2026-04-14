@@ -74,14 +74,21 @@
   <a href="tel:+17065806300" class="cta-button">Call Now</a>
 </section>
 
-<!-- ================= SPLIT IMAGES ================= -->
+<!-- ================= BEFORE & After IMAGES ================= -->
 
-<section class="split-images">
-  <img src="images/deck-3a.JPG">
-  <img src="images/deck-3b.jpg">
-  <img src="images/addition-2a.JPG">
-  <img src="images/addition-2b.JPG">
-</section>
+<div class="ba-slider" id="baSlider">
+  <img src="before.jpg" alt="Before">
+
+  <div class="after-wrapper" id="afterWrapper">
+    <img src="after.jpg" alt="After">
+  </div>
+
+  <div class="ba-handle" id="baHandle"></div>
+
+  <div class="ba-label before-label">Before</div>
+  <div class="ba-label after-label">After</div>
+  <div class="ba-instruction">← Swipe →</div>
+</div>
 
 <!-- ================= SERVICES ================= -->
 
@@ -277,6 +284,44 @@ if (window.innerWidth >= 768) {
 updateSlider();
 startAutoSlide();
 </script>
+
+<script>
+const slider = document.getElementById("baSlider");
+const afterWrapper = document.getElementById("afterWrapper");
+const handle = document.getElementById("baHandle");
+
+let isDragging = false;
+
+function updatePosition(x) {
+  const rect = slider.getBoundingClientRect();
+  let position = x - rect.left;
+
+  if (position < 0) position = 0;
+  if (position > rect.width) position = rect.width;
+
+  const percent = (position / rect.width) * 100;
+
+  afterWrapper.style.width = percent + "%";
+  handle.style.left = percent + "%";
+}
+
+// Mouse
+handle.addEventListener("mousedown", () => isDragging = true);
+window.addEventListener("mouseup", () => isDragging = false);
+window.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  updatePosition(e.clientX);
+});
+
+// Touch
+handle.addEventListener("touchstart", () => isDragging = true);
+window.addEventListener("touchend", () => isDragging = false);
+window.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  updatePosition(e.touches[0].clientX);
+});
+</script>
+
 
 
 </body>
