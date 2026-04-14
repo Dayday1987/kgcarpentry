@@ -181,19 +181,26 @@ function toggleMenu() {
 <script>
 let index = 0;
 let interval;
+let startX = 0;
+let endX = 0;
 
 const slides = document.getElementById("slides");
 const totalSlides = slides.children.length;
 const dotsContainer = document.getElementById("dots");
 
+// Create dots
 for (let i = 0; i < totalSlides; i++) {
   const dot = document.createElement("span");
-  dot.addEventListener("click", () => goToSlide(i));
+  dot.addEventListener("click", () => {
+    goToSlide(i);
+    restartAutoSlide();
+  });
   dotsContainer.appendChild(dot);
 }
 
 const dots = dotsContainer.children;
 
+// Update slider position + active dot
 function updateSlider() {
   slides.style.transform = `translateX(-${index * 100}%)`;
 
@@ -203,6 +210,7 @@ function updateSlider() {
   dots[index].classList.add("active");
 }
 
+// Navigation
 function nextSlide() {
   index = (index + 1) % totalSlides;
   updateSlider();
@@ -218,21 +226,58 @@ function goToSlide(i) {
   updateSlider();
 }
 
+// Autoplay
 function startAutoSlide() {
-  interval = setInterval(nextSlide, 3000);
+  interval = setInterval(nextSlide, 4000);
 }
 
 function stopAutoSlide() {
   clearInterval(interval);
 }
 
-const slider = document.querySelector(".slider");
-slider.addEventListener("mouseenter", stopAutoSlide);
-slider.addEventListener("mouseleave", startAutoSlide);
+function restartAutoSlide() {
+  stopAutoSlide();
+  startAutoSlide();
+}
 
+// Swipe handling
+function handleSwipe() {
+  const threshold = 50;
+
+  if (startX - endX > threshold) {
+    nextSlide();
+    restartAutoSlide();
+  } else if (endX - startX > threshold) {
+    prevSlide();
+    restartAutoSlide();
+  }
+}
+
+const slider = document.querySelector(".slider");
+
+// Touch events (mobile swipe)
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  endX = startX;
+});
+
+slider.addEventListener("touchmove", (e) => {
+  endX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", handleSwipe);
+
+// Hover pause (desktop only)
+if (window.innerWidth >= 768) {
+  slider.addEventListener("mouseenter", stopAutoSlide);
+  slider.addEventListener("mouseleave", startAutoSlide);
+}
+
+// Init
 updateSlider();
 startAutoSlide();
 </script>
+
 
 </body>
 </html>
