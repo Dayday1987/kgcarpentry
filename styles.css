@@ -333,6 +333,10 @@ nav.active {
   border-radius: 4px;
 }
 
+.ba-instruction {
+  transition: opacity 0.3s ease;
+}
+
 
 /* ================================
    FEATURED SERVICES (NEW)
