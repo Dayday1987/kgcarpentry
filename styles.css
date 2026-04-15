@@ -164,6 +164,18 @@ nav.active {
   font-weight: bold;
 }
 
+.wood-text {
+  background: url("images/wood-texture.jpg") center/cover no-repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
+
+  font-weight: 700;
+}
+
 /* ================================
    SLIDER
 ================================ */
