@@ -204,7 +204,7 @@ nav.active {
   bottom: 0px;
   left: 10px;
   color: white;
-  padding: 6px 10px;
+  padding: 0px 0px;
   border-radius: 4px;
   background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
 }
@@ -409,7 +409,7 @@ border-radius: 50%;
 .ba-label {
   position: absolute;
   top: 10px;
-  padding: 5px 10px;
+  padding: 0px 0px;
   font-size: 12px;
   color: white;
   background: rgba(0,0,0,0.7);
@@ -482,13 +482,39 @@ border-radius: 50%;
   text-decoration: none;
   font-weight: bold;
 
-  background: url("images/wood-texture.jpg") center/cover no-repeat;
+  background: url("images/button_bg.jpg") center/cover no-repeat;
   color: white;
 }
 
 .cta.strong {
   background: var(--primary);
   color: white;
+}
+
+.cta-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* controls darkness */
+}
+
+.cta-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
 }
 
 /* ================================
@@ -565,7 +591,7 @@ border-radius: 50%;
 /* INSTRUCTION */
 .ba-instruction {
   position: absolute;
-  bottom: 15px;
+  bottom: 0px;
   width: 100%;
   text-align: center;
   color: #fff;
@@ -582,7 +608,7 @@ border-radius: 50%;
 
 .cta-primary {
   flex: 1;
-  background: #000;
+  
   color: #fff;
   padding: 14px 20px;
   text-align: center;
