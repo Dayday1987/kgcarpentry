@@ -101,6 +101,8 @@
 </section>
 <!-- ================= BEFORE & After IMAGES ================= -->
 
+<!-- ================= BEFORE & After IMAGES ================= -->
+
 <div class="ba-slider" id="baSlider">
   <img src="before_1.jpg" alt="Before">
   <div class="after-wrapper" id="afterWrapper">
@@ -369,7 +371,58 @@ window.addEventListener("touchmove", (e) => {
 });
 </script>
 
+<script>
+document.querySelectorAll(".ba-slider").forEach(slider => {
+  const afterWrapper = slider.querySelector(".after-wrapper");
+  const handle = slider.querySelector(".ba-handle");
 
+  let isDragging = false;
+  let instructionHidden = false;
+
+  function updatePosition(x) {
+    const rect = slider.getBoundingClientRect();
+    let position = x - rect.left;
+
+    if (position < 0) position = 0;
+    if (position > rect.width) position = rect.width;
+
+    const percent = (position / rect.width) * 100;
+
+    afterWrapper.style.width = percent + "%";
+    handle.style.left = percent + "%";
+
+    if (!instructionHidden) {
+      const instruction = slider.querySelector(".ba-instruction");
+      if (instruction) instruction.style.opacity = "0";
+      instructionHidden = true;
+    }
+  }
+
+  slider.addEventListener("mousedown", e => {
+    isDragging = true;
+    updatePosition(e.clientX);
+  });
+
+  window.addEventListener("mouseup", () => isDragging = false);
+
+  window.addEventListener("mousemove", e => {
+    if (!isDragging) return;
+    updatePosition(e.clientX);
+  });
+
+  slider.addEventListener("touchstart", e => {
+    isDragging = true;
+    updatePosition(e.touches[0].clientX);
+  });
+
+  window.addEventListener("touchend", () => isDragging = false);
+
+  window.addEventListener("touchmove", e => {
+    if (!isDragging) return;
+    updatePosition(e.touches[0].clientX);
+  });
+});
+</script>
 
 
 </body>
