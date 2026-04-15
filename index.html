@@ -36,7 +36,7 @@
 <section class="content">
 
   <div class="slider">
-    <div class="slides" id="slides">
+    <div class="slides">
       <div class="slide"><img src="images/remodel_slider.jpg"><div class="overlay">Remodel</div></div>
        <div class="slide"><img src="images/deck_slider_1.jpg"><div class="overlay">Deck</div></div>
       <div class="slide"><img src="images/deck_slider_3.jpg"><div class="overlay">Deck</div></div>
@@ -99,29 +99,33 @@
   </div>
 
 </section>
-<!-- ================= BEFORE & After IMAGES ================= -->
 
-<!-- ================= BEFORE & After IMAGES ================= -->
+  <!-- ================= BEFORE & AFTER ================= -->
 
-<div class="ba-slider" id="baSlider">
-  <img src="before_1.jpg" alt="Before">
-  <div class="after-wrapper" id="afterWrapper">
-    <img src="after_1.jpg" alt="After">
+<div>
+  <img src="images/before_1.jpg" alt="Before">
+  <div>
+    <img src="images/after_1.jpg" alt="After">
   </div>
 
-  <div class="ba-slider" id="baSlider">
-  <img src="before_2.jpg" alt="Before">
-  <div class="after-wrapper" id="afterWrapper">
-    <img src="after_2.jpg" alt="After">
-  </div>
-
-  <div class="ba-handle" id="baHandle"></div>
-
+  <div></div>
   <div class="ba-label before-label">Before</div>
   <div class="ba-label after-label">After</div>
   <div class="ba-instruction">← Swipe →</div>
 </div>
 
+<div>
+  <img src="images/before_2.jpg" alt="Before">
+  <div>
+    <img src="images/after_2.jpg" alt="After">
+  </div>
+
+  <div></div>
+  <div class="ba-label before-label">Before</div>
+  <div class="ba-label after-label">After</div>
+  <div class="ba-instruction">← Swipe →</div>
+</div>
+  
 <!-- ================= SERVICES ================= -->
 
 <section class="content">
@@ -316,114 +320,6 @@ if (window.innerWidth >= 768) {
 updateSlider();
 startAutoSlide();
 </script>
-
-<script>
-const slider = document.getElementById("baSlider");
-const afterWrapper = document.getElementById("afterWrapper");
-const handle = document.getElementById("baHandle");
-
-let isDragging = false;
-let instructionHidden = false;
-
-function updatePosition(x) {
-  const rect = slider.getBoundingClientRect();
-  let position = x - rect.left;
-
-  if (position < 0) position = 0;
-  if (position > rect.width) position = rect.width;
-
-  const percent = (position / rect.width) * 100;
-
-  afterWrapper.style.width = percent + "%";
-  handle.style.left = percent + "%";
-
-  // Hide instruction ONCE
-  if (!instructionHidden) {
-    document.querySelector('.ba-instruction').style.opacity = '0';
-    instructionHidden = true;
-  }
-}
-
-// 🔥 Allow dragging ANYWHERE on the slider (better UX)
-slider.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  updatePosition(e.clientX);
-});
-
-window.addEventListener("mouseup", () => isDragging = false);
-
-window.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-  updatePosition(e.clientX);
-});
-
-// Touch support (mobile)
-slider.addEventListener("touchstart", (e) => {
-  isDragging = true;
-  updatePosition(e.touches[0].clientX);
-});
-
-window.addEventListener("touchend", () => isDragging = false);
-
-window.addEventListener("touchmove", (e) => {
-  if (!isDragging) return;
-  updatePosition(e.touches[0].clientX);
-});
-</script>
-
-<script>
-document.querySelectorAll(".ba-slider").forEach(slider => {
-  const afterWrapper = slider.querySelector(".after-wrapper");
-  const handle = slider.querySelector(".ba-handle");
-
-  let isDragging = false;
-  let instructionHidden = false;
-
-  function updatePosition(x) {
-    const rect = slider.getBoundingClientRect();
-    let position = x - rect.left;
-
-    if (position < 0) position = 0;
-    if (position > rect.width) position = rect.width;
-
-    const percent = (position / rect.width) * 100;
-
-    afterWrapper.style.width = percent + "%";
-    handle.style.left = percent + "%";
-
-    if (!instructionHidden) {
-      const instruction = slider.querySelector(".ba-instruction");
-      if (instruction) instruction.style.opacity = "0";
-      instructionHidden = true;
-    }
-  }
-
-  slider.addEventListener("mousedown", e => {
-    isDragging = true;
-    updatePosition(e.clientX);
-  });
-
-  window.addEventListener("mouseup", () => isDragging = false);
-
-  window.addEventListener("mousemove", e => {
-    if (!isDragging) return;
-    updatePosition(e.clientX);
-  });
-
-  slider.addEventListener("touchstart", e => {
-    isDragging = true;
-    updatePosition(e.touches[0].clientX);
-  });
-
-  window.addEventListener("touchend", () => isDragging = false);
-
-  window.addEventListener("touchmove", e => {
-    if (!isDragging) return;
-    updatePosition(e.touches[0].clientX);
-  });
-});
-</script>
-
-
+  
 </body>
 </html>
