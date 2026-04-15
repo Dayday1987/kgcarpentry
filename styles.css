@@ -197,7 +197,7 @@ nav.active {
 
 .overlay {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 10px;
   color: white;
   padding: 6px 10px;
@@ -280,7 +280,7 @@ background: white;
 ================================ */
 
 .about-section {
-  padding: 80px 20px;
+  padding: 10px 5px;
   background: #f9f9f9;
 }
 
