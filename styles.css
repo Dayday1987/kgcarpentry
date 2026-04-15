@@ -488,6 +488,71 @@ border-radius: 50%;
   margin: 0;
 }
 
+/* BEFORE / AFTER SLIDER */
+
+.ba-slider {
+  position: relative;
+  max-width: 900px;
+  margin: 60px auto;
+  overflow: hidden;
+}
+
+.ba-slider img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* AFTER LAYER */
+.after-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* HANDLE LINE */
+.ba-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: #fff;
+  z-index: 5;
+}
+
+/* LABELS */
+.ba-label {
+  position: absolute;
+  top: 15px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.before-label {
+  left: 15px;
+}
+
+.after-label {
+  right: 15px;
+}
+
+/* INSTRUCTION */
+.ba-instruction {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+
 /* 🔥 CTA UPGRADE */
 
 .about-cta {
