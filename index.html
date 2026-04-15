@@ -328,22 +328,9 @@ document.querySelectorAll(".ba-slider").forEach(slider => {
 
   let isDragging = false;
 
-    // 🔥 ADD THIS (initial position)
+  // Initial position
   afterWrapper.style.width = "50%";
   handle.style.left = "50%";
-
-  function updatePosition(x) {
-    const rect = slider.getBoundingClientRect();
-    let position = x - rect.left;
-
-    if (position < 0) position = 0;
-    if (position > rect.width) position = rect.width;
-
-    const percent = (position / rect.width) * 100;
-
-    afterWrapper.style.width = percent + "%";
-    handle.style.left = percent + "%";
-  }
 
   function updatePosition(x) {
     const rect = slider.getBoundingClientRect();
