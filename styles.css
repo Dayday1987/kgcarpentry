@@ -186,9 +186,9 @@ nav.active {
 
 .slide img {
   width: 100%;
-  height: 60vh;
+  height: 250px;
   object-fit: cover;
-  display: block;
+  object-position: center;
 }
 
 .overlay {
@@ -402,10 +402,6 @@ border-radius: 50%;
   height: 50px;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
-
 @media (min-width: 768px) {
 
   nav {
@@ -427,7 +423,7 @@ border-radius: 50%;
   }
 
   .slide img {
-    height: 350px;
+    height: 400px; /* balanced value */
   }
 
   .services-grid {
