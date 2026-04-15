@@ -171,6 +171,7 @@ nav.active {
    position: relative;
   overflow: hidden;
   border-radius: 0;
+   margin-bottom: "10px";
 }
 
 .slides {
@@ -197,7 +198,7 @@ nav.active {
 
 .overlay {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 10px;
   color: white;
   padding: 6px 10px;
