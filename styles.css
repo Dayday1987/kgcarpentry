@@ -284,6 +284,7 @@ position: relative;
 width: 100%;
 max-width: 1100px;
 height: 300px;
+margin-bottom: 50px;
 overflow: hidden;
 border-radius: 10px;
 cursor: ew-resize;
