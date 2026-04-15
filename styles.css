@@ -458,7 +458,6 @@ border-radius: 50%;
   height: 200px;
   object-fit: contain;
   background: white;
-  border-radius: 8px;
 }
 
 .feature h3 {
@@ -477,13 +476,14 @@ border-radius: 50%;
 
 .cta-button {
   display: inline-block;
-  background: var(--primary);
-  color: white;
-  padding: 10px 10px;
-  margin: 0px;
+  padding: 12px 20px;
+  margin: 10px 5px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+
+  background: url("images/wood-texture.jpg") center/cover no-repeat;
+  color: white;
 }
 
 .cta.strong {
@@ -504,6 +504,7 @@ border-radius: 50%;
   background: #f1f5f9;
   padding: 10px;
   border-radius: 8px;
+   margin: 15 px;
 }
 
 /* BEFORE / AFTER SLIDER */
@@ -626,6 +627,7 @@ border-radius: 50%;
   padding: 10px 10px;
   background: var(--primary);
   color: white;
+   margin-top: 15px;
 }
 
 .footer-logo {
