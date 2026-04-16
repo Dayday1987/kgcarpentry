@@ -239,10 +239,41 @@
 </footer>
 <!-- ================= SCRIPTS ================= -->
 
+<!-- ================= SCRIPTS ================= -->
+
 <script>
-function toggleMenu() {
-  document.getElementById("nav").classList.toggle("active");
-}
+document.addEventListener("DOMContentLoaded", () => {
+
+  const nav = document.getElementById("nav");
+
+  function toggleMenu() {
+    nav.classList.toggle("active");
+
+    // 🔥 lock/unlock scroll
+    document.body.style.overflow = nav.classList.contains("active")
+      ? "hidden"
+      : "auto";
+  }
+
+  window.toggleMenu = toggleMenu;
+
+  // Close when clicking a link
+  document.querySelectorAll("#nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      document.body.style.overflow = "auto";
+    });
+  });
+
+  // 🔥 Close when tapping outside (background)
+  nav.addEventListener("click", (e) => {
+    if (e.target === nav) {
+      nav.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+  });
+
+});
 </script>
 
 <script>
@@ -267,7 +298,6 @@ for (let i = 0; i < totalSlides; i++) {
 
 const dots = dotsContainer.children;
 
-// Update slider position + active dot
 function updateSlider() {
   slides.style.transform = `translateX(-${index * 100}%)`;
 
@@ -277,7 +307,6 @@ function updateSlider() {
   dots[index].classList.add("active");
 }
 
-// Navigation
 function nextSlide() {
   index = (index + 1) % totalSlides;
   updateSlider();
@@ -293,7 +322,6 @@ function goToSlide(i) {
   updateSlider();
 }
 
-// Autoplay
 function startAutoSlide() {
   interval = setInterval(nextSlide, 4000);
 }
@@ -307,7 +335,6 @@ function restartAutoSlide() {
   startAutoSlide();
 }
 
-// Swipe handling
 function handleSwipe() {
   const threshold = 50;
 
@@ -322,7 +349,6 @@ function handleSwipe() {
 
 const slider = document.querySelector(".slider");
 
-// Touch events (mobile swipe)
 slider.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
   endX = startX;
@@ -334,13 +360,11 @@ slider.addEventListener("touchmove", (e) => {
 
 slider.addEventListener("touchend", handleSwipe);
 
-// Hover pause (desktop only)
 if (window.innerWidth >= 768) {
   slider.addEventListener("mouseenter", stopAutoSlide);
   slider.addEventListener("mouseleave", startAutoSlide);
 }
 
-// Init
 updateSlider();
 startAutoSlide();
 </script>
@@ -352,7 +376,6 @@ document.querySelectorAll(".ba-slider").forEach(slider => {
 
   let isDragging = false;
 
-  // Initial position
   afterWrapper.style.width = "50%";
   handle.style.left = "50%";
 
@@ -415,7 +438,7 @@ function prevReview() {
   updateReviewSlider();
 }
 
-  setInterval(() => {
+setInterval(() => {
   nextReview();
 }, 5000);
 </script>
