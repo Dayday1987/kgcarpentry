@@ -49,29 +49,58 @@ h1, h2 {
 
 /* ================================HEADER FIX================================ */
 
-.nav-header {position: absolute;left: 15px;top: 15px;}
+.nav-header {
+  position: fixed;   /* 🔥 makes it scroll with page */
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
 
-.nav-toggle {font-size: 24px;cursor: pointer;}
-
+.nav-toggle {
+  font-size: 30px;   /* bigger */
+  cursor: pointer;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
 /* NAV */
 
 nav {
-  display: none;
-  flex-direction: column;
-  margin-top: 10px;
-  gap: 10px;
-}
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
 
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+
+  z-index: 999;
 }
 
 nav.active {
-  display: flex;
+  opacity: 1;
+  pointer-events: auto;
 }
 
+nav a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
 /* logo centered */
 
 .header-logo {
