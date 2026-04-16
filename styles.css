@@ -488,14 +488,20 @@ border-radius: 50%;
 
 .cta-button {
   display: inline-block;
-  padding: 12px 20px;
-  margin: 10px 5px;
-  border-radius: 6px;
+  padding: 14px 28px;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
   background: url("images/button_bg.jpg") center/cover no-repeat;
   color: white;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.2s ease;
 }
 
 .cta.strong {
@@ -512,7 +518,7 @@ border-radius: 50%;
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4); /* controls darkness */
+  background: rgba(0,0,0,0.2); /* lighter */
 }
 
 .cta-button span {
@@ -526,7 +532,7 @@ border-radius: 50%;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 /* ================================
