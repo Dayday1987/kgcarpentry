@@ -818,3 +818,9 @@ cursor: ew-resize;
   }
 
 }
+
+.content,
+.about-section,
+.featured-services {
+  background: #ffffff;
+}
