@@ -542,6 +542,7 @@ border-radius: 50%;
 .reviews {
   display: grid;
   gap: 15px;
+   margin-bottom: 15px;
 }
 
 .review {
@@ -669,6 +670,7 @@ border-radius: 50%;
 .footer {
   text-align: center;
   padding: 40px 20px;
+  background: black;
 }
 
 .back-to-top {
