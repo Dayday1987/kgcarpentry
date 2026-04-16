@@ -182,25 +182,6 @@ nav a:hover {
 
 }
 
-.services-grid div {
-  background: #f1f5f9;
-  padding: 20px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.wood-text {
-  background: url("images/wood-texture.jpg") center/cover no-repeat;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  background-clip: text;
-  color: transparent;
-
-  font-weight: 700;
-}
-
 /* ================================
    SLIDER
 ================================ */
@@ -565,10 +546,13 @@ border-radius: 50%;
 }
 
 .review-slide {
-
+  min-width: 100%;
+  padding: 30px;
+  text-align: center;
   background: #ffffff;
-
   border: 1px solid #eee;
+  border-radius: 10px;
+}
 
 .review-slide p {
   font-size: 16px;
@@ -731,6 +715,7 @@ cursor: ew-resize;
 }
 
 @media (min-width: 768px) {
+
   nav {
     position: static;
     opacity: 1;
@@ -738,8 +723,7 @@ cursor: ew-resize;
     background: none;
     flex-direction: row;
   }
-}
-   
+
   .hero {
     height: 85vh;
   }
@@ -753,7 +737,7 @@ cursor: ew-resize;
   }
 
   .slide img {
-    height: 400px; /* balanced value */
+    height: 400px;
   }
 
   .services-grid {
