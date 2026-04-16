@@ -425,7 +425,7 @@ const reviewSlides = document.getElementById("reviewSlides");
 const slides = reviewSlides.children;
 
 function updateReviewSlider() {
-  const slideWidth = slides[0].offsetWidth; // 🔥 exact pixel width
+  const slideWidth = slides[0].offsetWidth;
   reviewSlides.style.transform = `translateX(-${reviewIndex * slideWidth}px)`;
 }
 
@@ -439,7 +439,11 @@ function prevReview() {
   updateReviewSlider();
 }
 
-// Recalculate on resize (VERY important)
+/* 🔥 THIS IS THE FIX */
+window.nextReview = nextReview;
+window.prevReview = prevReview;
+
+// Resize fix
 window.addEventListener("resize", updateReviewSlider);
 
 // Auto play
