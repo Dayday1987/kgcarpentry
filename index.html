@@ -277,180 +277,174 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
-let index = 0;
-let interval;
-let startX = 0;
-let endX = 0;
+document.addEventListener("DOMContentLoaded", () => {
 
-const slides = document.getElementById("slides");
-const totalSlides = slides.children.length;
-const dotsContainer = document.getElementById("dots");
+  /* ================= HERO SLIDER ================= */
 
-// Create dots
-for (let i = 0; i < totalSlides; i++) {
-  const dot = document.createElement("span");
-  dot.addEventListener("click", () => {
-    goToSlide(i);
+  let index = 0;
+  let interval;
+  let startX = 0;
+  let endX = 0;
+
+  const heroSlides = document.getElementById("slides");
+  const totalSlides = heroSlides.children.length;
+  const dotsContainer = document.getElementById("dots");
+
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      index = i;
+      updateHeroSlider();
+      restartAutoSlide();
+    });
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = dotsContainer.children;
+
+  function updateHeroSlider() {
+    heroSlides.style.transform = `translateX(-${index * 100}%)`;
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+    dots[index].classList.add("active");
+  }
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    updateHeroSlider();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    updateHeroSlider();
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(nextSlide, 4000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(interval);
+  }
+
+  function restartAutoSlide() {
+    stopAutoSlide();
+    startAutoSlide();
+  }
+
+  const slider = document.querySelector(".slider");
+
+  slider.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    endX = startX;
+  });
+
+  slider.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", () => {
+    const threshold = 50;
+
+    if (startX - endX > threshold) nextSlide();
+    else if (endX - startX > threshold) prevSlide();
+
     restartAutoSlide();
   });
-  dotsContainer.appendChild(dot);
-}
 
-const dots = dotsContainer.children;
-
-function updateSlider() {
-  slides.style.transform = `translateX(-${index * 100}%)`;
-
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].classList.remove("active");
+  if (window.innerWidth >= 768) {
+    slider.addEventListener("mouseenter", stopAutoSlide);
+    slider.addEventListener("mouseleave", startAutoSlide);
   }
-  dots[index].classList.add("active");
-}
 
-function nextSlide() {
-  index = (index + 1) % totalSlides;
-  updateSlider();
-}
-
-function prevSlide() {
-  index = (index - 1 + totalSlides) % totalSlides;
-  updateSlider();
-}
-
-function goToSlide(i) {
-  index = i;
-  updateSlider();
-}
-
-function startAutoSlide() {
-  interval = setInterval(nextSlide, 4000);
-}
-
-function stopAutoSlide() {
-  clearInterval(interval);
-}
-
-function restartAutoSlide() {
-  stopAutoSlide();
+  updateHeroSlider();
   startAutoSlide();
-}
 
-function handleSwipe() {
-  const threshold = 50;
 
-  if (startX - endX > threshold) {
-    nextSlide();
-    restartAutoSlide();
-  } else if (endX - startX > threshold) {
-    prevSlide();
-    restartAutoSlide();
+  /* ================= BEFORE / AFTER ================= */
+
+  document.querySelectorAll(".ba-slider").forEach(slider => {
+    const afterWrapper = slider.querySelector(".after-wrapper");
+    const handle = slider.querySelector(".ba-handle");
+
+    let isDragging = false;
+
+    afterWrapper.style.width = "50%";
+    handle.style.left = "50%";
+
+    function updatePosition(x) {
+      const rect = slider.getBoundingClientRect();
+      let position = x - rect.left;
+
+      position = Math.max(0, Math.min(position, rect.width));
+
+      const percent = (position / rect.width) * 100;
+
+      afterWrapper.style.width = percent + "%";
+      handle.style.left = percent + "%";
+    }
+
+    slider.addEventListener("mousedown", e => {
+      isDragging = true;
+      updatePosition(e.clientX);
+    });
+
+    window.addEventListener("mouseup", () => isDragging = false);
+
+    window.addEventListener("mousemove", e => {
+      if (!isDragging) return;
+      updatePosition(e.clientX);
+    });
+
+    slider.addEventListener("touchstart", e => {
+      isDragging = true;
+      updatePosition(e.touches[0].clientX);
+    });
+
+    window.addEventListener("touchend", () => isDragging = false);
+
+    window.addEventListener("touchmove", e => {
+      if (!isDragging) return;
+      updatePosition(e.touches[0].clientX);
+    });
+  });
+
+
+  /* ================= REVIEW SLIDER ================= */
+
+  let reviewIndex = 0;
+
+  const reviewSlides = document.getElementById("reviewSlides");
+  const reviewItems = reviewSlides.children;
+
+  function updateReviewSlider() {
+    const slideWidth = reviewItems[0].offsetWidth;
+    reviewSlides.style.transform = `translateX(-${reviewIndex * slideWidth}px)`;
   }
-}
 
-const slider = document.querySelector(".slider");
-
-slider.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-  endX = startX;
-});
-
-slider.addEventListener("touchmove", (e) => {
-  endX = e.touches[0].clientX;
-});
-
-slider.addEventListener("touchend", handleSwipe);
-
-if (window.innerWidth >= 768) {
-  slider.addEventListener("mouseenter", stopAutoSlide);
-  slider.addEventListener("mouseleave", startAutoSlide);
-}
-
-updateSlider();
-startAutoSlide();
-</script>
-
-<script>
-document.querySelectorAll(".ba-slider").forEach(slider => {
-  const afterWrapper = slider.querySelector(".after-wrapper");
-  const handle = slider.querySelector(".ba-handle");
-
-  let isDragging = false;
-
-  afterWrapper.style.width = "50%";
-  handle.style.left = "50%";
-
-  function updatePosition(x) {
-    const rect = slider.getBoundingClientRect();
-    let position = x - rect.left;
-
-    if (position < 0) position = 0;
-    if (position > rect.width) position = rect.width;
-
-    const percent = (position / rect.width) * 100;
-
-    afterWrapper.style.width = percent + "%";
-    handle.style.left = percent + "%";
+  function nextReview() {
+    reviewIndex = (reviewIndex + 1) % reviewItems.length;
+    updateReviewSlider();
   }
 
-  slider.addEventListener("mousedown", e => {
-    isDragging = true;
-    updatePosition(e.clientX);
-  });
+  function prevReview() {
+    reviewIndex = (reviewIndex - 1 + reviewItems.length) % reviewItems.length;
+    updateReviewSlider();
+  }
 
-  window.addEventListener("mouseup", () => isDragging = false);
+  // 🔥 Make buttons work
+  window.nextReview = nextReview;
+  window.prevReview = prevReview;
 
-  window.addEventListener("mousemove", e => {
-    if (!isDragging) return;
-    updatePosition(e.clientX);
-  });
+  window.addEventListener("resize", updateReviewSlider);
 
-  slider.addEventListener("touchstart", e => {
-    isDragging = true;
-    updatePosition(e.touches[0].clientX);
-  });
+  setInterval(nextReview, 5000);
 
-  window.addEventListener("touchend", () => isDragging = false);
+  updateReviewSlider();
 
-  window.addEventListener("touchmove", e => {
-    if (!isDragging) return;
-    updatePosition(e.touches[0].clientX);
-  });
 });
-</script>
-
-<script>
-let reviewIndex = 0;
-
-const reviewSlides = document.getElementById("reviewSlides");
-const slides = reviewSlides.children;
-
-function updateReviewSlider() {
-  const slideWidth = slides[0].offsetWidth;
-  reviewSlides.style.transform = `translateX(-${reviewIndex * slideWidth}px)`;
-}
-
-function nextReview() {
-  reviewIndex = (reviewIndex + 1) % slides.length;
-  updateReviewSlider();
-}
-
-function prevReview() {
-  reviewIndex = (reviewIndex - 1 + slides.length) % slides.length;
-  updateReviewSlider();
-}
-
-/* 🔥 THIS IS THE FIX */
-window.nextReview = nextReview;
-window.prevReview = prevReview;
-
-// Resize fix
-window.addEventListener("resize", updateReviewSlider);
-
-// Auto play
-setInterval(nextReview, 5000);
-
-// Init
-updateReviewSlider();
 </script>
   
 </body>
