@@ -5,7 +5,7 @@
 :root {
   --primary: #111827;
   --accent: #f59e0b;
-  --bg: #f9fafb;
+  --bg: #ffffff;        /* 🔥 pure white */
   --surface: #ffffff;
   --text: #111827;
 }
