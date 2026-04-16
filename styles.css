@@ -147,13 +147,11 @@ nav.active {
    SERVICES GRID
 ================================ */
 .services-title {
-   text-align: center;
-   align-content: center;
+text-align: center;
 }
 
 .services-p {
    text-align: center;
-   align-content: center;
 }
 
 .services-grid {
@@ -324,6 +322,7 @@ background: white;
   font-size: 14px;
   color: #777;
   margin-bottom: 25px;
+ text-align: center;
 }
 
 .about-text {
