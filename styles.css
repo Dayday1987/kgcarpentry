@@ -643,7 +643,7 @@ border-radius: 50%;
 .cta-secondary {
   flex: 1;
   border: 2px solid #000;
-  color: #000;
+  color: white;
   padding: 10px 10px;
   text-align: center;
   text-decoration: none;
@@ -676,7 +676,8 @@ border-radius: 50%;
 
 .back-to-top {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
   text-decoration: none;
   font-weight: 600;
   color: white;
@@ -684,16 +685,8 @@ border-radius: 50%;
 
 .footer-logo {
   display: block;
-  margin: 10px auto;
-  height: 60px;
-}
-
-.back-to-top {
-  margin-bottom: 20px;
-}
-
-.footer-logo {
   margin-bottom: 15px;
+  height: 60px;
 }
 
 @media (min-width: 768px) {
