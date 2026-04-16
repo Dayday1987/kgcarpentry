@@ -186,30 +186,35 @@
 
 </section>
 
-<!-- ================= REVIEWS ================= -->
-
 <section class="content">
-  <h2 id="reviews-title">Customer Reviews</h2>
+  <h2>Customer Reviews</h2>
 
-  <div class="reviews">
+  <div class="review-slider">
 
-    <div class="review">
-      <p>★★★★★</p>
-      <p>"Great work, very professional and on time. Highly recommend!"</p>
-      <strong>- John D.</strong>
+    <div class="review-slides" id="reviewSlides">
+
+      <div class="review-slide">
+        <p>★★★★★</p>
+        <p>"Great work, very professional and on time. Highly recommend!"</p>
+        <strong>- John D.</strong>
+      </div>
+
+      <div class="review-slide">
+        <p>★★★★★</p>
+        <p>"Built our deck exactly how we wanted it. Solid craftsmanship."</p>
+        <strong>- Sarah M.</strong>
+      </div>
+
+      <div class="review-slide">
+        <p>★★★★★</p>
+        <p>"Reliable and detail-oriented. Will hire again."</p>
+        <strong>- Mike R.</strong>
+      </div>
+
     </div>
 
-    <div class="review">
-      <p>★★★★★</p>
-      <p>"Built our deck exactly how we wanted it. Solid craftsmanship."</p>
-      <strong>- Sarah M.</strong>
-    </div>
-
-    <div class="review">
-      <p>★★★★★</p>
-      <p>"Reliable and detail-oriented. Will hire again."</p>
-      <strong>- Mike R.</strong>
-    </div>
+    <button class="prev" onclick="prevReview()">❮</button>
+    <button class="next" onclick="nextReview()">❯</button>
 
   </div>
 </section>
@@ -388,6 +393,31 @@ document.querySelectorAll(".ba-slider").forEach(slider => {
     updatePosition(e.touches[0].clientX);
   });
 });
+</script>
+
+<script>
+let reviewIndex = 0;
+
+const reviewSlides = document.getElementById("reviewSlides");
+const totalReviewSlides = reviewSlides.children.length;
+
+function updateReviewSlider() {
+  reviewSlides.style.transform = `translateX(-${reviewIndex * 100}%)`;
+}
+
+function nextReview() {
+  reviewIndex = (reviewIndex + 1) % totalReviewSlides;
+  updateReviewSlider();
+}
+
+function prevReview() {
+  reviewIndex = (reviewIndex - 1 + totalReviewSlides) % totalReviewSlides;
+  updateReviewSlider();
+}
+
+  setInterval(() => {
+  nextReview();
+}, 5000);
 </script>
   
 </body>
