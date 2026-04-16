@@ -689,6 +689,10 @@ border-radius: 50%;
   height: 60px;
 }
 
+.cr {
+   color: white;
+}
+
 @media (min-width: 768px) {
 
   nav {
