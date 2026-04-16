@@ -148,6 +148,12 @@ nav.active {
 ================================ */
 .services-title {
    text-align: center;
+   align-content: center;
+}
+
+.services-p {
+   text-align: center;
+   align-content: center;
 }
 
 .services-grid {
