@@ -668,14 +668,29 @@ border-radius: 50%;
 
 .footer {
   text-align: center;
-  padding: 10px 10px;
-  background: var(--primary);
+  padding: 40px 20px;
+}
+
+.back-to-top {
+  display: block;
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-weight: 600;
   color: white;
-   margin-top: 15px;
 }
 
 .footer-logo {
-  height: 50px;
+  display: block;
+  margin: 10px auto;
+  height: 60px;
+}
+
+.back-to-top {
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
