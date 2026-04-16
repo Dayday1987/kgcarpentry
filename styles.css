@@ -543,6 +543,7 @@ border-radius: 50%;
 .review-slides {
   display: flex;
   transition: transform 0.5s ease;
+   width: 100%;
 }
 
 .review-slide {
