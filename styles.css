@@ -558,6 +558,18 @@ border-radius: 50%;
   font-size: 16px;
 }
 
+.review-slide {
+  flex: 0 0 100%;   /* 🔥 critical fix */
+  max-width: 100%;
+
+  padding: 30px;
+  text-align: center;
+
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
 .review-slide strong {
   display: block;
   margin-top: 10px;
