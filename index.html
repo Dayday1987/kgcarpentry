@@ -422,25 +422,31 @@ document.querySelectorAll(".ba-slider").forEach(slider => {
 let reviewIndex = 0;
 
 const reviewSlides = document.getElementById("reviewSlides");
-const totalReviewSlides = reviewSlides.children.length;
+const slides = reviewSlides.children;
 
 function updateReviewSlider() {
-  reviewSlides.style.transform = `translateX(-${reviewIndex * 100}%)`;
+  const slideWidth = slides[0].offsetWidth; // 🔥 exact pixel width
+  reviewSlides.style.transform = `translateX(-${reviewIndex * slideWidth}px)`;
 }
 
 function nextReview() {
-  reviewIndex = (reviewIndex + 1) % totalReviewSlides;
+  reviewIndex = (reviewIndex + 1) % slides.length;
   updateReviewSlider();
 }
 
 function prevReview() {
-  reviewIndex = (reviewIndex - 1 + totalReviewSlides) % totalReviewSlides;
+  reviewIndex = (reviewIndex - 1 + slides.length) % slides.length;
   updateReviewSlider();
 }
 
-setInterval(() => {
-  nextReview();
-}, 5000);
+// Recalculate on resize (VERY important)
+window.addEventListener("resize", updateReviewSlider);
+
+// Auto play
+setInterval(nextReview, 5000);
+
+// Init
+updateReviewSlider();
 </script>
   
 </body>
