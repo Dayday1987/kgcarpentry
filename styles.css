@@ -539,19 +539,35 @@ border-radius: 50%;
    REVIEWS
 ================================ */
 
-.reviews {
-  display: grid;
-  gap: 15px;
-   margin-bottom: 15px;
+.review-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+  margin: auto;
 }
 
-.review {
+.review-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.review-slide {
+  min-width: 100%;
+  padding: 30px;
+  text-align: center;
   background: #f1f5f9;
-  padding: 10px;
-  border-radius: 8px;
-   margin: 15 px;
+  border-radius: 10px;
 }
 
+.review-slide p {
+  font-size: 16px;
+}
+
+.review-slide strong {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
 /* BEFORE / AFTER SLIDER */
 
 .ba-slider {
