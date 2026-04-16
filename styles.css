@@ -649,6 +649,7 @@ border-radius: 50%;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
+   background: url("images/button_bg.jpg") center/cover no-repeat;
 }
 
 .cta-secondary:hover {
