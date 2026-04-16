@@ -151,8 +151,9 @@ text-align: center;
 }
 
 .services-content {
-   align-text: center;
+   text-align: center;
 }
+
 .services-p {
    text-align: center;
 }
@@ -339,7 +340,7 @@ background: white;
 
 .about-contact {
   margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .contact-item {
@@ -502,6 +503,7 @@ border-radius: 50%;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-align: center;
 
   background: url("images/button_bg.jpg") center/cover no-repeat;
   color: white;
@@ -518,7 +520,6 @@ border-radius: 50%;
 }
 
 .cta-button {
-  position: relative;
   overflow: hidden;
 }
 
@@ -754,4 +755,30 @@ border-radius: 50%;
   .split-images {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+@media (max-width: 600px) {
+
+  /* Services section */
+  #services-title,
+  .services-p {
+    text-align: center;
+  }
+
+  /* Buttons */
+  .cta-button,
+  .cta-primary,
+  .cta-secondary {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* Reviews title */
+  .review-slider h2,
+  .content h2 {
+    text-align: center;
+  }
+
 }
