@@ -175,11 +175,11 @@ nav a:hover {
 ================================ */
 
 .services-grid div {
-
   background: #ffffff;
-
-  border: 1px solid #eee; /* subtle separation */
-
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
 /* ================================
@@ -744,16 +744,11 @@ cursor: ew-resize;
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .reviews {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .split-images {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
-  /* Buttons */
+/* ✅ MOBILE ONLY */
+@media (max-width: 600px) {
+
   .cta-button,
   .cta-primary,
   .cta-secondary {
@@ -763,18 +758,18 @@ cursor: ew-resize;
     text-align: center;
   }
 
-  /* Reviews title */
   .review-slider h2,
-  .content h2 {
+  .content h2,
+  .services-title,
+  .services-p {
     text-align: center;
   }
 
-}
-
-@media (max-width: 600px) {
   .about-cta {
+    flex-direction: column;
     align-items: center;
   }
+
 }
 
 @media (max-width: 600px) {
