@@ -174,11 +174,12 @@ nav a:hover {
    SERVICES GRID
 ================================ */
 
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  text-align: center;
+.services-grid div {
+
+  background: #ffffff;
+
+  border: 1px solid #eee; /* subtle separation */
+
 }
 
 .services-grid div {
@@ -321,7 +322,7 @@ background: white;
 
 .about-section {
   padding: 10px 5px;
-  background: #f9f9f9;
+  background: #ffffff;
 }
 
 .about-container {
@@ -465,7 +466,7 @@ border-radius: 50%;
 ================================ */
 
 .services-title {
-   text-align: "center";
+   text-align: center;
 }
 
 .featured-services {
@@ -564,12 +565,10 @@ border-radius: 50%;
 }
 
 .review-slide {
-  min-width: 100%;
-  padding: 30px;
-  text-align: center;
-  background: #f1f5f9;
-  border-radius: 10px;
-}
+
+  background: #ffffff;
+
+  border: 1px solid #eee;
 
 .review-slide p {
   font-size: 16px;
@@ -732,13 +731,15 @@ cursor: ew-resize;
 }
 
 @media (min-width: 768px) {
-
   nav {
-    display: flex !important;
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    background: none;
     flex-direction: row;
-    justify-content: center;
   }
-
+}
+   
   .hero {
     height: 85vh;
   }
@@ -767,14 +768,6 @@ cursor: ew-resize;
     grid-template-columns: 1fr 1fr;
   }
 }
-
-@media (max-width: 600px) {
-
-  /* Services section */
-  #services-title,
-  .services-p {
-    text-align: center;
-  }
 
   /* Buttons */
   .cta-button,
