@@ -353,11 +353,12 @@ background: white;
 
 .contact-item .label {
   display: block;
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #999;
+  font-size: 14px;      /* bigger */
+  font-weight: 700;     /* bold */
+  color: #000;          /* black */
   margin-bottom: 5px;
   text-transform: uppercase;
+  letter-spacing: 1px;  /* slightly tighter = cleaner */
 }
 
 .contact-item a {
