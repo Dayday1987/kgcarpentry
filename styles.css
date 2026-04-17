@@ -322,6 +322,7 @@ background: white;
   font-size: 28px;
   margin-bottom: 10px;
   text-align: center;
+   color: url("images/button_bg.jpg") center/cover no-repeat
 }
 
 .about-tagline {
