@@ -21,6 +21,10 @@ body {
   color: var(--text);
 }
 
+.page-title {
+  font-family: 'Cinzel', serif;
+}
+
 section {
   margin-bottom: 0px;
 }
@@ -312,8 +316,9 @@ background: white;
   text-align: left;
 }
 
-.about-title {
-  font-family: 'Poppins', sans-serif;
+
+  .page-title {
+  font-family: 'Cinzel', serif;
   font-size: 28px;
   margin-bottom: 10px;
   text-align: center;
