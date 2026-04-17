@@ -1,54 +1,50 @@
-/* ================================
-   GLOBAL / MOBILE FIRST
-================================ */
-
 :root {
   --primary: #111827;
-  --accent: #f59e0b;
-  --bg: #ffffff;        /* 🔥 pure white */
+  --accent: #c6a25a;   /* 🔥 upgrade gold tone */
+  --bg: #ffffff;
   --surface: #ffffff;
   --text: #111827;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* Base */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
-.page-title {
-  font-family: 'Cinzel', serif;
-}
-
+/* Section spacing */
 section {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
+/* Headings */
 h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
+/* 🔥 Primary luxury titles ONLY */
+.page-title,
+.about-title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+/* Sizes */
 h1 {
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 15px;
 }
 
 h3 {
-  font-weight: 600;
-}
-
-h1, h2 {
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
 /* ================================HEADER FIX================================ */
@@ -320,17 +316,20 @@ background: white;
   .about-title {
   font-family: 'Cinzel', serif;
   font-size: 28px;
-  margin-bottom: 10px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
   text-align: center;
-   color: url("images/button_bg.jpg") center/cover no-repeat
+  margin-bottom: 10px;
+  color: #000;
 }
 
 .about-tagline {
-  letter-spacing: 2px;
-  font-size: 14px;
-  color: #777;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
   margin-bottom: 25px;
- text-align: center;
 }
 
 .about-text {
