@@ -716,6 +716,10 @@ cursor: ew-resize;
   color: #fff;
 }
 
+.cta-light::before {
+  background: rgba(0,0,0,0.15); /* lighter overlay */
+}
+
 /* MOBILE STACK */
 
 @media (max-width: 600px) {
@@ -835,4 +839,12 @@ cursor: ew-resize;
 .about-section,
 .featured-services {
   background: white;
+}
+
+html, body {
+  background: #ffffff;
+}
+
+* {
+  background-color: white !important;
 }
