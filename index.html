@@ -227,44 +227,7 @@
 
 </footer>
 <!-- ================= SCRIPTS ================= -->
-
-<!-- ================= SCRIPTS ================= -->
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const nav = document.getElementById("nav");
-
-  function toggleMenu() {
-    nav.classList.toggle("active");
-
-    // 🔥 lock/unlock scroll
-    document.body.style.overflow = nav.classList.contains("active")
-      ? "hidden"
-      : "auto";
-  }
-
-  window.toggleMenu = toggleMenu;
-
-  // Close when clicking a link
-  document.querySelectorAll("#nav a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
-      document.body.style.overflow = "auto";
-    });
-  });
-
-  // 🔥 Close when tapping outside (background)
-  nav.addEventListener("click", (e) => {
-    if (e.target === nav) {
-      nav.classList.remove("active");
-      document.body.style.overflow = "auto";
-    }
-  });
-
-});
-</script>
-
+  
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
