@@ -62,7 +62,7 @@ section {
   border: 1px solid #e5e7eb;
   padding: 25px;
   border-radius: 10px;
-  align-text: center;
+  text-align: left;
 
   transition: all 0.25s ease;
 }
