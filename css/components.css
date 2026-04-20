@@ -1,3 +1,7 @@
+/* ================================
+   NAVBAR
+================================ */
+
 .nav-header {
   position: fixed;
   top: 0;
@@ -7,14 +11,57 @@
   z-index: 1000;
 }
 
-.header-logo {
-  margin-top: 60px;
+.nav-toggle {
+  font-size: 30px;
+  cursor: pointer;
+  background: #ffffff;
+  color: black;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 10px;
 }
+
+nav {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+
+  z-index: 999;
+}
+
+nav.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+nav a {
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
 /* ================================
    BUTTON SYSTEM
 ================================ */
 
-/* Base button (shared) */
+/* Base */
 .cta-button,
 .cta-primary,
 .cta-secondary {
@@ -42,27 +89,21 @@
   z-index: 1;
 }
 
-/* ================================
-   PRIMARY BUTTON
-================================ */
-
+/* Primary */
 .cta-primary {
   flex: 1;
   background: var(--primary);
   color: #fff;
 }
 
-/* ================================
-   TEXTURED BUTTONS
-================================ */
-
+/* Textured */
 .cta-button,
 .cta-secondary {
   background: url("../images/button_bg.jpg") center/cover no-repeat;
   color: white;
 }
 
-/* Overlay for contrast */
+/* Overlay */
 .cta-button::before,
 .cta-secondary::before {
   content: "";
@@ -71,15 +112,7 @@
   background: rgba(0,0,0,0.15);
 }
 
-/* Optional lighter version */
-.cta-light::before {
-  background: rgba(0,0,0,0.08);
-}
-
-/* ================================
-   HOVER EFFECTS
-================================ */
-
+/* Hover */
 .cta-button:hover,
 .cta-primary:hover,
 .cta-secondary:hover {
@@ -87,80 +120,32 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Shine effect */
-.cta-button::after,
-.cta-primary::after,
-.cta-secondary::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  transform: skewX(-25deg);
-}
-
-.cta-button:hover::after,
-.cta-primary:hover::after,
-.cta-secondary:hover::after {
-  left: 125%;
-  transition: 0.6s;
-}
-
-/* Active (tap) feedback */
+/* Active */
 .cta-button:active,
 .cta-primary:active,
 .cta-secondary:active {
   transform: scale(0.97);
 }
 
-/* ================================
-   HERO BUTTON
-================================ */
-
-.hero-btn {
-  background: var(--accent);
-  color: black;
-  padding: 12px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-bottom: 10px
-}
-
-/* ================================
-   CTA LAYOUT
-================================ */
-
+/* CTA layout */
 .about-cta {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
-  margin-bottom: 10px
 }
 
-/* ================================
-   MOBILE
-================================ */
-
+/* MOBILE */
 @media (max-width: 600px) {
   .cta-button,
   .cta-primary,
   .cta-secondary {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px
+    margin: 0 auto 10px;
     text-align: center;
   }
-
-@media (max-width: 600px) {
 
   .about-cta {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
-
 }
