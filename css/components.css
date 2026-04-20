@@ -61,7 +61,6 @@ nav a:hover {
    BUTTON SYSTEM
 ================================ */
 
-/* Base */
 .cta-button,
 .cta-primary,
 .cta-secondary {
@@ -81,7 +80,6 @@ nav a:hover {
   transition: all 0.25s ease;
 }
 
-/* Text layer */
 .cta-button span,
 .cta-primary span,
 .cta-secondary span {
@@ -89,21 +87,18 @@ nav a:hover {
   z-index: 1;
 }
 
-/* Primary */
 .cta-primary {
   flex: 1;
   background: var(--primary);
   color: #fff;
 }
 
-/* Textured */
 .cta-button,
 .cta-secondary {
   background: url("../images/button_bg.jpg") center/cover no-repeat;
   color: white;
 }
 
-/* Overlay */
 .cta-button::before,
 .cta-secondary::before {
   content: "";
@@ -112,7 +107,6 @@ nav a:hover {
   background: rgba(0,0,0,0.15);
 }
 
-/* Hover */
 .cta-button:hover,
 .cta-primary:hover,
 .cta-secondary:hover {
@@ -120,7 +114,6 @@ nav a:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Active */
 .cta-button:active,
 .cta-primary:active,
 .cta-secondary:active {
@@ -132,10 +125,12 @@ nav a:hover {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
+
   .cta-button,
   .cta-primary,
   .cta-secondary {
@@ -148,4 +143,5 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
   }
+
 }
