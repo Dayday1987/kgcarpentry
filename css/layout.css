@@ -25,3 +25,8 @@
   margin: 0 auto;
   padding: 20px;
 }
+
+/* Section spacing */
+section {
+  margin-bottom: 0;
+}
