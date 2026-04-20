@@ -1,13 +1,20 @@
-/* logo .header-logo {
+/* logo */
+.header-logo {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin: 0;        /* 🔥 remove spacing */
-  padding: 0;       /* 🔥 remove spacing */
+  margin: 0;
+  padding: 0;
 
   position: relative;
   top: 0;
+}
+
+.header-logo img {
+  display: block;
+  height: 80px;
+  width: auto;
 }
 
 .header-logo img {
