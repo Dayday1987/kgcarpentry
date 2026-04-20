@@ -14,11 +14,6 @@ body {
   color: var(--text);
 }
 
-/* Section spacing */
-section {
-  margin-bottom: 0;
-}
-
 /* Headings */
 h1, h2, h3 {
   font-family: 'Raleway', sans-serif;
@@ -102,23 +97,6 @@ nav a {
 nav a:hover {
   opacity: 0.7;
 }
-/* logo .header-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0;        /* 🔥 remove spacing */
-  padding: 0;       /* 🔥 remove spacing */
-
-  position: relative;
-  top: 0;
-}
-
-.header-logo img {
-  display: block;   /* 🔥 removes inline gap */
-  height: 80px;
-  width: auto;
-}
 /* ================================
    HERO
 ================================ */
@@ -155,17 +133,6 @@ nav a:hover {
   font-size: 18px;
   margin-bottom: 20px;
 }
-
-/* ================================
-   CONTENT
-================================ */
-
-.content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 /* ================================
    SERVICES GRID
 ================================ */
@@ -661,7 +628,6 @@ cursor: ew-resize;
 
 }
 
-.content,
 .about-section,
 .featured-services {
   background: white;
@@ -670,7 +636,6 @@ cursor: ew-resize;
 @media (max-width: 600px) {
 
   /* Center main content text */
-  .content,
   .about-section,
   .featured-services,
   .cta,
