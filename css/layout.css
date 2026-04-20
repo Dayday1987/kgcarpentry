@@ -67,6 +67,15 @@ section {
   transition: all 0.25s ease;
 }
 
+.service-card h2 {
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
 /* Hover */
 .service-card:hover {
   transform: translateY(-4px);
