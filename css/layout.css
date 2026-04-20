@@ -38,7 +38,7 @@ section {
 .services-page {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
@@ -61,6 +61,7 @@ section {
   border: 1px solid #e5e7eb;
   padding: 25px;
   border-radius: 10px;
+  align-text: center;
 
   transition: all 0.25s ease;
 }
