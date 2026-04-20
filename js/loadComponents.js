@@ -1,18 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const navbarContainer = document.getElementById("navbar");
 
-  if (navbarContainer) {
-    fetch("components/navbar.html")
-      .then(response => response.text())
-      .then(data => {
-        navbarContainer.innerHTML = data;
+  loadComponent("navbar", "components/navbar.html", initNavbar);
+  loadComponent("footer", "components/footer.html");
 
-        // 🔥 run navbar logic AFTER it's injected
-        initNavbar();
-      })
-      .catch(error => console.error("Error loading navbar:", error));
-  }
 });
+
+function loadComponent(id, file, callback) {
+  const container = document.getElementById(id);
+
+  if (container) {
+    fetch(file)
+      .then(res => res.text())
+      .then(data => {
+        container.innerHTML = data;
+        if (callback) callback();
+      })
+      .catch(err => console.error(`Error loading ${id}:`, err));
+  }
+}
 
 function initNavbar() {
   const nav = document.getElementById("nav");
@@ -20,16 +25,13 @@ function initNavbar() {
 
   function toggleMenu() {
     nav.classList.toggle("active");
-
     document.body.style.overflow = nav.classList.contains("active")
       ? "hidden"
       : "auto";
   }
 
-  // make it available to onclick=""
   window.toggleMenu = toggleMenu;
 
-  // close on link click
   document.querySelectorAll("#nav a").forEach(link => {
     link.addEventListener("click", () => {
       nav.classList.remove("active");
@@ -37,7 +39,6 @@ function initNavbar() {
     });
   });
 
-  // close when tapping background
   nav.addEventListener("click", (e) => {
     if (e.target === nav) {
       nav.classList.remove("active");
