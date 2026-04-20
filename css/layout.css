@@ -30,3 +30,55 @@ section {
   margin-bottom: 0;
   text-align: center;
 }
+
+/* ================================
+   SERVICES PAGE
+================================ */
+
+.services-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.services-intro {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.services-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Cards */
+.service-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 25px;
+  border-radius: 10px;
+
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* CTA spacing */
+.services-cta {
+  margin-top: 40px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .services-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
