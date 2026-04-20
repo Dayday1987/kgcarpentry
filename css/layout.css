@@ -1,1 +1,17 @@
+/* logo .header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  margin: 0;        /* 🔥 remove spacing */
+  padding: 0;       /* 🔥 remove spacing */
+
+  position: relative;
+  top: 0;
+}
+
+.header-logo img {
+  display: block;   /* 🔥 removes inline gap */
+  height: 80px;
+  width: auto;
+}
