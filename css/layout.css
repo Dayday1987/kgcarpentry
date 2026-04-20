@@ -82,3 +82,7 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.services-hero {
+  background: url("../images/work1.JPG") center/cover no-repeat;
+}
