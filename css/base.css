@@ -9,6 +9,7 @@
 /* Base */
 body {
   margin: 0;
+  padding-top: 60px;
   font-family: 'Raleway', sans-serif;
   background: var(--bg);
   color: var(--text);
