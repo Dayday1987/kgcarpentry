@@ -24,9 +24,13 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
+  background: white;
 }
 
 /* Section spacing */
 section {
   margin-bottom: 0;
+  text-align: center;
+  background: white;
 }
