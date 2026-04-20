@@ -1,24 +1,15 @@
-/* logo */
+/* ================================
+   LOGO
+================================ */
+
 .header-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin: 0;
-  padding: 0;
-
-  position: relative;
-  top: 0;
 }
 
 .header-logo img {
   display: block;
-  height: 80px;
-  width: auto;
-}
-
-.header-logo img {
-  display: block;   /* 🔥 removes inline gap */
   height: 80px;
   width: auto;
 }
@@ -32,12 +23,10 @@
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  background: white;
 }
 
-/* Section spacing */
+/* Sections */
 section {
   margin-bottom: 0;
   text-align: center;
-  background: white;
 }
