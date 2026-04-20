@@ -14,17 +14,19 @@
 .nav-toggle {
   font-size: 30px;
   cursor: pointer;
-  background: #ffffff;
   color: black;
+
   padding: 10px 14px;
   border-radius: 6px;
-  margin: 10px;
+   background: rgba(255,255,255,0.85);
+backdrop-filter: blur(6px);
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 🔥 subtle lift */
 }
 
 nav {
   position: fixed;
   inset: 0;
-  background: #ffffff;
 
   display: flex;
   flex-direction: column;
@@ -43,6 +45,8 @@ nav {
 nav.active {
   opacity: 1;
   pointer-events: auto;
+  background: rgba(255,255,255,0.95); /* 🔥 soft overlay */
+  backdrop-filter: blur(6px);
 }
 
 nav a {
