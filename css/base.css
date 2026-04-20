@@ -669,3 +669,20 @@ cursor: ew-resize;
   background: white;
 }
 
+@media (max-width: 600px) {
+
+  /* Center main content text */
+  .content,
+  .about-section,
+  .featured-services,
+  .cta,
+  .review-slide {
+    text-align: center;
+  }
+
+  /* Center headings */
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+}
