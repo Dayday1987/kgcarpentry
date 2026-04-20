@@ -278,7 +278,7 @@ background: white;
 .about-container {
   max-width: 800px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 
@@ -313,10 +313,12 @@ background: white;
 .about-contact {
   margin-top: 30px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .contact-item {
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .contact-item .label {
@@ -327,6 +329,7 @@ background: white;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;  /* slightly tighter = cleaner */
+  text-align: center;
 }
 
 .contact-item a {
@@ -343,6 +346,7 @@ background: white;
   font-size: 16px;
   font-weight: 400;
   color: black;
+  text-align: center;
 }
 
 /* ================================
