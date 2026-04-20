@@ -4,24 +4,28 @@
 
 .nav-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 60px;
-  width: 100%;
+  top: 15px;
+  left: 15px;
+
   z-index: 1000;
+
+  width: auto;        /* 🔥 key fix */
+  height: auto;       /* 🔥 key fix */
 }
 
 .nav-toggle {
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
-  color: black;
 
   padding: 10px 14px;
-  border-radius: 6px;
-   background: rgba(255,255,255,0.85);
-backdrop-filter: blur(6px);
+  border-radius: 10px;
 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 🔥 subtle lift */
+  background: rgba(255,255,255,0.75);   /* 🔥 glass */
+  backdrop-filter: blur(8px);
+
+  color: black;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 nav {
