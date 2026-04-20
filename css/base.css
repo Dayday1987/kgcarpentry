@@ -158,15 +158,6 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.hero-btn {
-  background: var(--accent);
-  color: black;
-  padding: 12px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 /* ================================
    CONTENT
 ================================ */
@@ -493,66 +484,6 @@ border-radius: 50%;
 .feature h3 {
   margin-top: 5px;
 }
-
-/* ================================
-   CTA
-================================ */
-
-.cta {
-  background: var(--surface);
-  text-align: center;
-  padding: 10px 10px;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-align: center;
-
-  background: url("../images/button_bg.jpg") center/cover no-repeat;
-  color: white;
-
-  position: relative;
-  overflow: hidden;
-
-  transition: all 0.2s ease;
-}
-
-.cta.strong {
-  background: var(--primary);
-  color: white;
-}
-
-.cta-button {
-  overflow: hidden;
-}
-
-.cta-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.2); /* lighter */
-}
-
-.cta-button span {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-button {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
-}
-
-.cta-button:hover {
-  opacity: 0.9;
-}
-
 /* ================================
    REVIEWS
 ================================ */
@@ -670,72 +601,6 @@ cursor: ew-resize;
   font-size: 14px;
 }
 
-/* 🔥 CTA UPGRADE */
-
-.about-cta {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.cta-primary {
-  flex: 1;
-  
-  color: #fff;
-  padding: 14px 20px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.cta-primary:hover {
-  background: #333;
-}
-
-.cta-secondary {
-  flex: 1;
-  border: 2px solid #000;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-
-  background: url("../images/button_bg.jpg") center/cover no-repeat;
-  position: relative;
-}
-
-.cta-secondary::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4); /* 🔥 dark overlay for contrast */
-}
-
-.cta-secondary span {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-secondary:hover {
-  background: #000;
-  color: #fff;
-}
-
-.cta-light::before {
-  background: rgba(0,0,0,0.15); /* lighter overlay */
-}
-
-/* MOBILE STACK */
-
-@media (max-width: 600px) {
-  .about-cta {
-    flex-direction: column;
-  }
-}
-
 /* ================================
    FOOTER
 ================================ */
@@ -798,22 +663,151 @@ cursor: ew-resize;
 
 }
 
-/* ✅ MOBILE ONLY */
-@media (max-width: 600px) {
+.content,
+.about-section,
+.featured-services {
+  background: white;
+}
 
+/* ================================
+   BUTTON SYSTEM
+================================ */
+
+/* Base button (shared) */
+.cta-button,
+.cta-primary,
+.cta-secondary {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+/* Text layer */
+.cta-button span,
+.cta-primary span,
+.cta-secondary span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================
+   PRIMARY BUTTON
+================================ */
+
+.cta-primary {
+  flex: 1;
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ================================
+   TEXTURED BUTTONS
+================================ */
+
+.cta-button,
+.cta-secondary {
+  background: url("../images/button_bg.jpg") center/cover no-repeat;
+  color: white;
+}
+
+/* Overlay for contrast */
+.cta-button::before,
+.cta-secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+}
+
+/* Optional lighter version */
+.cta-light::before {
+  background: rgba(0,0,0,0.08);
+}
+
+/* ================================
+   HOVER EFFECTS
+================================ */
+
+.cta-button:hover,
+.cta-primary:hover,
+.cta-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Shine effect */
+.cta-button::after,
+.cta-primary::after,
+.cta-secondary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-25deg);
+}
+
+.cta-button:hover::after,
+.cta-primary:hover::after,
+.cta-secondary:hover::after {
+  left: 125%;
+  transition: 0.6s;
+}
+
+/* Active (tap) feedback */
+.cta-button:active,
+.cta-primary:active,
+.cta-secondary:active {
+  transform: scale(0.97);
+}
+
+/* ================================
+   HERO BUTTON
+================================ */
+
+.hero-btn {
+  background: var(--accent);
+  color: black;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ================================
+   CTA LAYOUT
+================================ */
+
+.about-cta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
   .cta-button,
   .cta-primary,
   .cta-secondary {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-  }
-
-  .review-slider h2,
-  .content h2,
-  .services-title,
-  .services-p {
     text-align: center;
   }
 
@@ -821,30 +815,4 @@ cursor: ew-resize;
     flex-direction: column;
     align-items: center;
   }
-
-}
-
-@media (max-width: 600px) {
-
-  .services-title,
-  .services-p,
-  .content > h2 {
-    text-align: center;
-  }
-
-  .cta-button,
-  .cta-primary,
-  .cta-secondary {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
-}
-
-.content,
-.about-section,
-.featured-services {
-  background: white;
 }
