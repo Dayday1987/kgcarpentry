@@ -1,7 +1,8 @@
 .services-slider {
   position: relative;
-  height: 60vh;
+  height: 80vh;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 
 .services-slide {
