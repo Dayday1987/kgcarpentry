@@ -89,24 +89,14 @@ h3 {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 25px;
 }
 
-/* ONLY target cards */
-.services-grid > .service-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  padding: 25px;
-  border-radius: 10px;
-
-  transition: all 0.25s ease;
-}
-
-/* Hover */
-.services-grid > .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ================================
