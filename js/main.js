@@ -1,20 +1,183 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  let index = 0;
-  const slides = document.querySelectorAll(".services-slide");
+  /* ================= HERO SLIDER ================= */
 
-  if (!slides.length) return; // 🔥 prevents errors on other pages
+  const heroSlides = document.getElementById("slides");
+  const dotsContainer = document.getElementById("dots");
 
-  function showSlide(i) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[i].classList.add("active");
+  if (heroSlides && dotsContainer) {
+
+    let index = 0;
+    let interval;
+    let startX = 0;
+    let endX = 0;
+
+    const totalSlides = heroSlides.children.length;
+
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("span");
+      dot.addEventListener("click", () => {
+        index = i;
+        updateHeroSlider();
+        restartAutoSlide();
+      });
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = dotsContainer.children;
+
+    function updateHeroSlider() {
+      heroSlides.style.transform = `translateX(-${index * 100}%)`;
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+      }
+      dots[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      index = (index + 1) % totalSlides;
+      updateHeroSlider();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateHeroSlider();
+    }
+
+    // Global buttons
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+
+    function startAutoSlide() {
+      interval = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(interval);
+    }
+
+    function restartAutoSlide() {
+      stopAutoSlide();
+      startAutoSlide();
+    }
+
+    const slider = document.querySelector(".slider");
+
+    if (slider) {
+      slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        endX = startX;
+      });
+
+      slider.addEventListener("touchmove", (e) => {
+        endX = e.touches[0].clientX;
+      });
+
+      slider.addEventListener("touchend", () => {
+        const threshold = 50;
+
+        if (startX - endX > threshold) nextSlide();
+        else if (endX - startX > threshold) prevSlide();
+
+        restartAutoSlide();
+      });
+
+      if (window.innerWidth >= 768) {
+        slider.addEventListener("mouseenter", stopAutoSlide);
+        slider.addEventListener("mouseleave", startAutoSlide);
+      }
+    }
+
+    updateHeroSlider();
+    startAutoSlide();
   }
 
-  function nextSlide() {
-    index = (index + 1) % slides.length;
-    showSlide(index);
+  /* ================= BEFORE / AFTER ================= */
+
+  const baSliders = document.querySelectorAll(".ba-slider");
+
+  if (baSliders.length) {
+    baSliders.forEach(slider => {
+      const afterWrapper = slider.querySelector(".after-wrapper");
+      const handle = slider.querySelector(".ba-handle");
+
+      let isDragging = false;
+
+      afterWrapper.style.width = "50%";
+      handle.style.left = "50%";
+
+      function updatePosition(x) {
+        const rect = slider.getBoundingClientRect();
+        let position = x - rect.left;
+
+        position = Math.max(0, Math.min(position, rect.width));
+
+        const percent = (position / rect.width) * 100;
+
+        afterWrapper.style.width = percent + "%";
+        handle.style.left = percent + "%";
+      }
+
+      slider.addEventListener("mousedown", e => {
+        isDragging = true;
+        updatePosition(e.clientX);
+      });
+
+      window.addEventListener("mouseup", () => isDragging = false);
+
+      window.addEventListener("mousemove", e => {
+        if (!isDragging) return;
+        updatePosition(e.clientX);
+      });
+
+      slider.addEventListener("touchstart", e => {
+        isDragging = true;
+        updatePosition(e.touches[0].clientX);
+      });
+
+      window.addEventListener("touchend", () => isDragging = false);
+
+      window.addEventListener("touchmove", e => {
+        if (!isDragging) return;
+        updatePosition(e.touches[0].clientX);
+      });
+    });
   }
 
-  setInterval(nextSlide, 4000);
+  /* ================= REVIEW SLIDER ================= */
+
+  const reviewSlides = document.getElementById("reviewSlides");
+
+  if (reviewSlides) {
+
+    let reviewIndex = 0;
+    const reviewItems = reviewSlides.children;
+
+    function updateReviewSlider() {
+      const slideWidth = reviewItems[0].offsetWidth;
+      reviewSlides.style.transform = `translateX(-${reviewIndex * slideWidth}px)`;
+    }
+
+    function nextReview() {
+      reviewIndex = (reviewIndex + 1) % reviewItems.length;
+      updateReviewSlider();
+    }
+
+    function prevReview() {
+      reviewIndex = (reviewIndex - 1 + reviewItems.length) % reviewItems.length;
+      updateReviewSlider();
+    }
+
+    window.nextReview = nextReview;
+    window.prevReview = prevReview;
+
+    window.addEventListener("resize", updateReviewSlider);
+
+    setInterval(nextReview, 5000);
+
+    updateReviewSlider();
+  }
 
 });
