@@ -117,6 +117,13 @@ section {
 .service-card {
   text-align: left;
   overflow: hidden;
+   background: #fff;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04); /* 🔥 subtle depth */
+
+  transition: all 0.25s ease;
 }
 
 .service-img {
@@ -125,6 +132,9 @@ section {
 
 .service-card:hover .service-img {
   transform: scale(1.05);
+   transform: translateY(-4px);
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .service-detail {
@@ -162,4 +172,14 @@ section {
 
 .detail-list li {
   margin-bottom: 8px;
+}
+
+/* Alternate section spacing + separation */
+section.content {
+  padding: 60px 20px;
+}
+
+/* Add subtle divider between sections */
+section.content + section.content {
+  border-top: 1px solid #e5e7eb;
 }
