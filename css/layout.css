@@ -56,13 +56,6 @@ section {
   margin-bottom: 10px;
 }
 
-/* Grid */
-.services-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
 /* Cards */
 .service-card {
   background: #ffffff;
@@ -106,13 +99,6 @@ section {
 /* CTA spacing */
 .services-cta {
   margin-top: 50px;
-}
-
-/* Desktop */
-@media (min-width: 768px) {
-  .services-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .services-hero {
