@@ -31,30 +31,33 @@
 
   <!-- SLIDER -->
 
-  <section class="services-slider">
+  <section class="content">
 
-  <div class="services-slide active">
-    <img src="images/services_decks1.png" alt="Deck construction">
-    <div class="services-overlay">
-      <h1>Custom Decks Built to Last</h1>
-      <p>Outdoor spaces designed for comfort and durability</p>
-    </div>
-  </div>
+  <div class="slider">
+    <div class="slides" id="slides">
 
-  <div class="services-slide">
-    <img src="images/services_remodeling1.png" alt="Home remodeling">
-    <div class="services-overlay">
-      <h1>Transform Your Home</h1>
-      <p>Modern remodeling with precision craftsmanship</p>
-    </div>
-  </div>
+      <div class="slide">
+        <img src="images/services_decks1.png">
+        <div class="overlay">Decks</div>
+      </div>
 
-  <div class="services-slide">
-    <img src="images/services_additions1.png" alt="Home additions">
-    <div class="services-overlay">
-      <h1>Expand Your Space</h1>
-      <p>Seamless additions that feel like home</p>
+      <div class="slide">
+        <img src="images/services_remodeling1.png">
+        <div class="overlay">Remodeling</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/services_additions1.png">
+        <div class="overlay">Additions</div>
+      </div>
+
     </div>
+
+    <button class="prev" onclick="prevSlide()">❮</button>
+    <button class="next" onclick="nextSlide()">❯</button>
+
+    <div class="dots" id="dots"></div>
+
   </div>
 
 </section>
