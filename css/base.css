@@ -85,6 +85,9 @@ h3 {
 /* ================================
    SERVICES GRID
 ================================ */
+.services-grid {
+  gap: 25px;
+}
 
 .services-grid div {
   background: #ffffff;
