@@ -126,3 +126,40 @@ section {
 .service-card:hover .service-img {
   transform: scale(1.05);
 }
+
+.service-detail {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.service-detail img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.detail-title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.detail-text {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.detail-sub {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.detail-list {
+  padding-left: 20px;
+}
+
+.detail-list li {
+  margin-bottom: 8px;
+}
