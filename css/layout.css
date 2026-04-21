@@ -45,7 +45,7 @@ section {
 
 .services-intro {
   font-size: 16px;
-  color: #555;
+  color: #000;
   margin-bottom: 40px;
 }
 
@@ -79,7 +79,7 @@ section {
 }
 
 .service-card p {
-  color: #555;
+  color: #000;
   line-height: 1.6;
 }
 
