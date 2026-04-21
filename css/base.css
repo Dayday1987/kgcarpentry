@@ -565,6 +565,7 @@ cursor: ew-resize;
   /* Center headings */
   h1, h2, h3 {
     text-align: center;
+    color: #000;
   }
 
 } 
