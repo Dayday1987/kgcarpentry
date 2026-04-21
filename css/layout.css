@@ -50,10 +50,11 @@ section {
 }
 
 
-/* SERVICE ICON */
 .service-icon {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 26px;
+  margin-bottom: 12px;
+
+  display: inline-block;
 }
 
 /* Cards */
