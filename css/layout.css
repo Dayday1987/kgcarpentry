@@ -136,6 +136,9 @@ section.content + section.content {
   max-width: 800px;
   margin: 60px auto;
   text-align: left;
+  border-top: 1px solid #eee;
+
+  padding-top: 40px;
 }
 
 .service-detail img {
