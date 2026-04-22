@@ -169,10 +169,12 @@ h3 {
   border-radius: 4px;
 }
 
-/* Controls */
+/* ================================
+   SLIDER CONTROLS (HOMEPAGE ONLY)
+================================ */
 
-.prev,
-.next {
+.slider .prev,
+.slider .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -195,11 +197,13 @@ h3 {
   transition: 0.3s;
 }
 
-.prev { left: 15px; }
-.next { right: 15px; }
+/* 🔥 FIX: scope positioning */
+.slider .prev { left: 15px; }
+.slider .next { right: 15px; }
 
-.prev:hover,
-.next:hover {
+/* 🔥 FIX: scope hover */
+.slider .prev:hover,
+.slider .next:hover {
   background: rgba(0,0,0,0.8);
 }
 
@@ -373,6 +377,11 @@ h3 {
   margin-top: 10px;
 }
 
+
+.review-slider .prev,
+.review-slider .next {
+  display: none;
+}
 /* ================================
    RESPONSIVE
 ================================ */
