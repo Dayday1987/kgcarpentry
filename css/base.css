@@ -3,10 +3,17 @@
   --accent: #c6a25a;
   --bg: #ffffff;
   --surface: #ffffff;
-  --text: #000000;   /* 🔥 force true black */
+  --text: #000000;
 }
 
-/* Base */
+/* ================================
+   BASE
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding-top: 60px;
@@ -15,16 +22,15 @@ body {
   color: var(--text);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* ================================
+   TYPOGRAPHY
+================================ */
 
-/* Headings */
 h1, h2, h3 {
   font-family: 'Raleway', sans-serif;
+  color: #000;
 }
 
-/* 🔥 Primary luxury titles ONLY */
 .page-title,
 .about-title {
   font-family: 'Cinzel', serif;
@@ -32,7 +38,6 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
-/* Sizes */
 h1 {
   font-weight: 600;
   letter-spacing: 2px;
@@ -46,6 +51,7 @@ h2 {
 h3 {
   font-weight: 500;
 }
+
 /* ================================
    HERO
 ================================ */
@@ -69,7 +75,7 @@ h3 {
 .hero-overlay {
   position: relative;
   text-align: center;
-  color: white;
+  color: #fff;
   padding: 20px;
 }
 
@@ -100,17 +106,8 @@ h3 {
 }
 
 /* ================================
-   FEATURED SERVICES (NEW)
+   FEATURED SERVICES
 ================================ */
-
-.services-title {
-   text-align: center;
-}
-
-.services-title {
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
 
 .featured-services {
   text-align: center;
@@ -125,7 +122,7 @@ h3 {
   width: 100%;
   height: 200px;
   object-fit: contain;
-  background: white;
+  background: #fff;
 }
 
 .feature h3 {
@@ -133,27 +130,24 @@ h3 {
 }
 
 /* ================================
-   SLIDER
+   SLIDER (HOMEPAGE)
 ================================ */
 
 .slider {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-   position: relative;
+  position: relative;
   overflow: hidden;
-  border-radius: 0;
-   margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .slides {
   display: flex;
   transition: transform 0.5s ease;
-  will-change: transform;
 }
 
 .slide {
   flex: 0 0 100%;
-  max-width: 100%;
   position: relative;
 }
 
@@ -161,23 +155,20 @@ h3 {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  object-position: center;
-
-  position: relative;
-  z-index: 1;
 }
 
+/* Overlay label */
 .overlay {
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   left: 10px;
-  color: white;
-  padding: 0px 0px;
-  border-radius: 4px;
+  color: #fff;
+  padding: 5px 10px;
   background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  border-radius: 4px;
 }
 
-/* CONTROLS */
+/* Controls */
 
 .prev,
 .next {
@@ -186,13 +177,13 @@ h3 {
   transform: translateY(-50%);
   z-index: 10;
 
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-
   width: 45px;
   height: 45px;
   border-radius: 50%;
+
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
 
   display: flex;
   align-items: center;
@@ -203,57 +194,43 @@ h3 {
   transition: 0.3s;
 }
 
-/* LEFT SIDE */
-.prev {
-  left: 15px;
-}
+.prev { left: 15px; }
+.next { right: 15px; }
 
-/* RIGHT SIDE */
-.next {
-  right: 15px;
-}
-
-/* HOVER EFFECT */
 .prev:hover,
 .next:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.prev,
-.next {
-  backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.8);
 }
 
 /* Dots */
 
 .dots {
-position: absolute;
-bottom: 15px;
-left: 50%;
-transform: translateX(-50%);
-display: flex;
-gap: 6px;
-z-index: 10;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
 }
 
 .dots span {
-width: 6px;
-height: 6px;
-background: rgba(255,255,255,0.5);
-border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
 }
 
 .dots span.active {
-background: white;
+  background: #fff;
 }
 
 /* ================================
-   ABOUT SECTION (MODERN CLEAN)
+   ABOUT SECTION
 ================================ */
 
 .about-section {
-  padding: 10px 5px;
-  background: white;
+  padding: 20px 10px;
+  background: #fff;
 }
 
 .about-container {
@@ -262,220 +239,65 @@ background: white;
   text-align: center;
 }
 
-
-  .about-title {
-  font-family: 'Cinzel', serif;
-  font-size: 28px;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 10px;
-  color: black;
-}
-
 .about-tagline {
   font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: black;
-  text-align: center;
   margin-bottom: 25px;
 }
 
 .about-text {
   font-size: 16px;
   line-height: 1.7;
-  color: black;
   margin-bottom: 18px;
 }
 
-/* CONTACT BLOCK */
+/* ================================
+   CONTACT BLOCK
+================================ */
 
 .about-contact {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  text-align: center;
+  margin: 30px 0 20px;
 }
 
 .contact-item {
   margin-bottom: 15px;
-  text-align: center;
 }
 
 .contact-item .label {
-  display: block;
-  font-size: 14px;      /* bigger */
-  font-weight: 700;     /* bold */
-  color: black;          /* black */
-  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;  /* slightly tighter = cleaner */
-  text-align: center;
-}
-
-.contact-item a {
-  text-decoration: none;
-}
-
-.contact-item p {
-  
-  margin: 0;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
 }
 
 .contact-item a,
 .contact-item p {
   font-size: 16px;
-  font-weight: 400;
-  color: black;
-  text-align: center;
+  color: #000;
+  margin: 0;
 }
 
 /* ================================
-BEFORE & AFTER IMAGES
+   BEFORE / AFTER SLIDER
 ================================ */
-
-.after-wrapper {
-position: absolute;
-top: 0;
-left: 0;
-width: 50%; /* starting position */
-height: 100%;
-overflow: hidden;
-}
-
-.ba-handle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background: white;
-  border-radius: 50%;
-  z-index: 10;
-  cursor: ew-resize;
-  box-shadow: none;
-
-  border: 1px solid #ddd;
-}
-
-.ba-handle::after {
-content: ‘’;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 30px;
-height: 30px;
-background: white;
-border-radius: 50%;
-}
-/* ===================
-          Labels
-=================== */
-.ba-label {
-  position: absolute;
-  top: 10px;
-  padding: 0px 0px;
-  font-size: 12px;
-  color: white;
-  background: rgba(0,0,0,0.7);
-  border-radius: 4px;
-}
-
-.before-label { left: 10px; }
-.after-label { right: 10px; }
-
-/* =====================
-   Instruction 
-===================== */
-   
-.ba-instruction {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 12px;
-  background: rgba(0,0,0,0.6);
-  padding: 4px 10px;
-  border-radius: 4px;
-  transition: opacity 0.3s ease;
-}
-
-.ba-label,
-.ba-instruction {
-  z-index: 5;
-}
-/* ================================
-   REVIEWS
-================================ */
-
-.review-slider {
-  position: relative;
-  overflow: hidden;
-  max-width: 700px;
-  margin: auto;
-}
-
-.review-slides {
-  display: flex;
-  transition: transform 0.5s ease;
-   width: 100%;
-}
-
-.review-slide {
-  flex: 0 0 100%;
-  max-width: 100%;
-  padding: 30px;
-  text-align: center;
-  background: #f1f5f9;
-  border: 1px solid #eee;
-  border-radius: 10px;
-}
-
-.review-slide p {
-  font-size: 16px;
-}
-
-
-
-.review-slide strong {
-  display: block;
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-.services-grid div:hover,
-.review-slide:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-/* BEFORE / AFTER SLIDER */
 
 .ba-slider {
   position: relative;
   max-width: 900px;
-  margin: 10px auto;
+  margin: 20px auto 50px;
+  height: 300px;
   overflow: hidden;
-width: 100%;
-height: 300px;
-margin-bottom: 50px;
-border-radius: 10px;
-cursor: ew-resize;
+  border-radius: 10px;
 }
-
 
 .ba-slider img {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
-  display: block;
-
-  filter: brightness(1.05) contrast(1.1);
 }
 
-/* AFTER LAYER */
 .after-wrapper {
   position: absolute;
   top: 0;
@@ -485,10 +307,8 @@ cursor: ew-resize;
   overflow: hidden;
 }
 
-/* HANDLE LINE */
 .ba-handle {
   position: absolute;
-  top: 0;
   left: 50%;
   width: 3px;
   height: 100%;
@@ -496,37 +316,67 @@ cursor: ew-resize;
   z-index: 5;
 }
 
-/* LABELS */
+/* Labels */
+
 .ba-label {
   position: absolute;
   top: 15px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
   padding: 5px 10px;
   font-size: 12px;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
 }
 
-.before-label {
-  left: 15px;
-}
+.before-label { left: 15px; }
+.after-label { right: 15px; }
 
-.after-label {
-  right: 15px;
-}
-
-/* INSTRUCTION */
 .ba-instruction {
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   width: 100%;
   text-align: center;
   color: #fff;
   font-size: 14px;
 }
 
+/* ================================
+   REVIEWS
+================================ */
+
+.review-slider {
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.review-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.review-slide {
+  flex: 0 0 100%;
+  padding: 30px;
+  background: #f1f5f9;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.review-slide p {
+  font-size: 16px;
+}
+
+.review-slide strong {
+  display: block;
+  margin-top: 10px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
 
 @media (min-width: 768px) {
-
   .hero {
     height: 85vh;
   }
@@ -542,28 +392,16 @@ cursor: ew-resize;
   .slide img {
     height: 400px;
   }
-
-}
-
-.about-section,
-.featured-services {
-  background: white;
 }
 
 @media (max-width: 600px) {
+  h1, h2, h3 {
+    text-align: center;
+  }
 
-  /* Center main content text */
   .about-section,
   .featured-services,
-  .cta,
   .review-slide {
     text-align: center;
   }
-
-  /* Center headings */
-  h1, h2, h3 {
-    text-align: center;
-    color: #000;
-  }
-
-} 
+}
