@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-   background: white;
+  background: #fff;
 }
 
 .header-logo img {
@@ -16,65 +16,72 @@
 }
 
 /* ================================
-   CONTENT
+   GLOBAL CONTENT / SECTIONS
 ================================ */
 
 .content {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 60px 20px; /* 🔥 upgraded spacing */
   text-align: center;
 }
 
-/* Sections */
-section {
-  margin-bottom: 0;
-  text-align: center;
+/* Section separation */
+section.content + section.content {
+  border-top: 1px solid #e5e7eb;
 }
 
 /* ================================
-   SERVICES PAGE
+   TYPOGRAPHY / HEADINGS
 ================================ */
 
-.services-page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 50px 20px;
-  text-align: center;
+.page-title {
+  margin-bottom: 10px;
 }
 
-.services-intro {
+.page-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 10px auto 0;
+}
+
+.services-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.services-p {
+  max-width: 600px;
+  margin: 10px auto 20px;
   font-size: 16px;
   color: #000;
-  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
+/* ================================
+   SERVICES HERO
+================================ */
 
-.service-icon {
-  font-size: 26px;
-  margin-bottom: 12px;
-
-  display: inline-block;
+.services-hero {
+  background: url("../images/work1.JPG") center/cover no-repeat;
 }
 
-/* Cards */
+/* ================================
+   SERVICE CARDS
+================================ */
+
 .service-card {
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #e5e7eb;
   padding: 25px;
   border-radius: 10px;
   text-align: left;
 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   transition: all 0.25s ease;
-}
-
-.service-card h2 {
-  margin-bottom: 8px;
-}
-
-.service-card p {
-  color: #000;
-  line-height: 1.6;
 }
 
 .service-card h3 {
@@ -91,20 +98,20 @@ section {
   margin-top: 8px;
 }
 
-/* Hover */
+.service-card p {
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Hover effect */
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-/* CTA spacing */
-.services-cta {
-  margin-top: 50px;
-}
-
-.services-hero {
-  background: url("../images/work1.JPG") center/cover no-repeat;
-}
+/* ================================
+   SERVICE IMAGES
+================================ */
 
 .service-img {
   width: 100%;
@@ -112,29 +119,22 @@ section {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
-}
 
-.service-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04); /* 🔥 subtle depth */
-
-  transition: all 0.25s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08); /* 🔥 stronger on hover */
-}
-
-.service-img {
   transition: transform 0.4s ease;
 }
 
+/* subtle zoom */
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+
+/* ================================
+   SERVICE DETAILS (EXPANDED SECTIONS)
+================================ */
+
 .service-detail {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 60px auto;
   text-align: left;
 }
 
@@ -169,12 +169,10 @@ section {
   margin-bottom: 8px;
 }
 
-/* Alternate section spacing + separation */
-section.content {
-  padding: 60px 20px;
-}
+/* ================================
+   CTA SPACING
+================================ */
 
-/* Add subtle divider between sections */
-section.content + section.content {
-  border-top: 1px solid #e5e7eb;
+.services-cta {
+  margin-top: 60px;
 }
