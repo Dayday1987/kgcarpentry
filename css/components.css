@@ -153,8 +153,9 @@ nav a:hover {
 /* PRIMARY BUTTON (solid) */
 .cta-primary {
   flex: 1;
-  background: var(--primary);
-  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+
+  color: #000;
 }
 
 /* TEXTURED BUTTONS */
@@ -170,7 +171,9 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.15);
+  background: var(--primary);
+
+  color: #fff;
 }
 
 /* Hover */
