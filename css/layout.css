@@ -118,6 +118,10 @@ section.content + section.content {
   color: var(--accent-2);
 }
 
+  .service-card {
+  will-change: transform, opacity;
+}
+
 /* ================================
    SERVICE IMAGES
 ================================ */
