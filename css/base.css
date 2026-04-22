@@ -1,9 +1,13 @@
 :root {
-  --primary: #111827;
-  --accent: #c6a25a;
+  --primary: #0a0a0a;        /* deep black */
+  --accent: #d9ff00;         /* neon yellow */
+  --accent-2: #00c2a8;       /* teal */
   --bg: #ffffff;
   --surface: #ffffff;
   --text: #000000;
+
+  --muted: #6b7280;          /* gray text */
+  --border: #e5e7eb;
 }
 
 /* ================================
