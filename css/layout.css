@@ -188,3 +188,28 @@ section.content + section.content {
 .services-cta {
   margin-top: 60px;
 }
+
+/* ================================
+   SCROLL ANIMATIONS
+================================ */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+/* When visible */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger effect (clean cascade) */
+.fade-up:nth-child(1) { transition-delay: 0.1s; }
+.fade-up:nth-child(2) { transition-delay: 0.2s; }
+.fade-up:nth-child(3) { transition-delay: 0.3s; }
+.fade-up:nth-child(4) { transition-delay: 0.4s; }
+.fade-up:nth-child(5) { transition-delay: 0.5s; }
+.fade-up:nth-child(6) { transition-delay: 0.6s; }
+
