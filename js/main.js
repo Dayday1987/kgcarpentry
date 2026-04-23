@@ -197,3 +197,53 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".fade-up").forEach(el => {
   observer.observe(el);
 });
+
+/* ================= GALLERY FILTER ================= */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // active button
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.getAttribute("data-filter");
+
+    galleryItems.forEach(item => {
+      const category = item.getAttribute("data-category");
+
+      if (filter === "all" || category === filter) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+  });
+});
+
+/* ================= LIGHTBOX ================= */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox-close");
+
+document.querySelectorAll(".gallery-item img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("active");
+    lightboxImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target !== lightboxImg) {
+    lightbox.classList.remove("active");
+  }
+});
