@@ -31,6 +31,10 @@ section.content + section.content {
   border: 1px solid var(--border);
 }
 
+/* REMOVE TOP SPACE FOR SLIDER ONLY */
+.content:first-of-type {
+  padding-top: 0;
+}
 /* ================================
    TYPOGRAPHY / HEADINGS
 ================================ */
