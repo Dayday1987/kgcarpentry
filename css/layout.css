@@ -244,6 +244,12 @@ section.content + section.content {
   margin-top: 60px;
 }
 
+@media (max-width: 768px) {
+  .gallery-caption {
+    opacity: 1;
+  }
+}
+
 /* ================================
    SCROLL ANIMATIONS
 ================================ */
