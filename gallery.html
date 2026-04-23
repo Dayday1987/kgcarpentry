@@ -1,77 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | KG Carpentry</title>
-
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/layout.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<div id="navbar"></div>
-
-<div class="header-logo">
-  <img src="images/logo-white.PNG" alt="KG Carpentry Logo">
+<div class="gallery-filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="framing">Framing</button>
+  <button class="filter-btn" data-filter="decks">Decks</button>
+  <button class="filter-btn" data-filter="trim">Trim</button>
+  <button class="filter-btn" data-filter="remodeling">Remodeling</button>
 </div>
 
-<!-- ================= GALLERY ================= -->
+<div class="gallery-grid">
 
-<section class="content">
-
-  <h2 class="page-title">Our Work</h2>
-
-  <p class="services-p">
-    A look at some of our recent projects and craftsmanship.
-  </p>
-
-  <div class="gallery-grid">
-
-    <div class="gallery-item fade-up">
-      <img src="images/gallery1.jpg">
-    </div>
-
-    <div class="gallery-item fade-up">
-      <img src="images/gallery2.jpg">
-    </div>
-
-    <div class="gallery-item fade-up">
-      <img src="images/gallery3.jpg">
-    </div>
-
-    <div class="gallery-item fade-up">
-      <img src="images/gallery4.jpg">
-    </div>
-
-    <div class="gallery-item fade-up">
-      <img src="images/gallery5.jpg">
-    </div>
-
-    <div class="gallery-item fade-up">
-      <img src="images/gallery6.jpg">
-    </div>
-
+  <div class="gallery-item fade-up" data-category="framing">
+    <img src="images/gallery_framing_1.jpg">
+    <div class="gallery-caption">Large residential addition framing with custom roof trusses.</div>
   </div>
 
-</section>
+  <div class="gallery-item fade-up" data-category="trim">
+    <img src="images/gallery_trim_3.jpg">
+    <div class="gallery-caption">Custom wainscoting, crown molding, and built-in details.</div>
+  </div>
 
-<section class="cta strong">
-  <h2>Like What You See?</h2>
-  <a href="contact.html" class="cta-button">
-    <span>Request a Quote</span>
-  </a>
-</section>
+  <div class="gallery-item fade-up" data-category="decks">
+    <img src="images/gallery_addition_2.jpg">
+    <div class="gallery-caption">Precision composite decking with clean fasteners and finish.</div>
+  </div>
 
-<div id="footer"></div>
+  <div class="gallery-item fade-up" data-category="decks">
+    <img src="images/gallery_deck_1.jpg">
+    <div class="gallery-caption">Finished cedar deck with composite railings.</div>
+  </div>
 
-<script src="js/loadComponents.js"></script>
-<script src="js/main.js"></script>
+  <div class="gallery-item fade-up" data-category="trim">
+    <img src="images/gallery_trim_1.jpg">
+    <div class="gallery-caption">Detailed crown molding with perfectly flush joints.</div>
+  </div>
 
-</body>
-</html>
+  <div class="gallery-item fade-up" data-category="decks">
+    <img src="images/gallery_deck_2.jpg">
+    <div class="gallery-caption">Wide-angle cedar deck with built-in seating.</div>
+  </div>
+
+  <div class="gallery-item fade-up" data-category="remodeling">
+    <img src="images/gallery_renovations_2.jpg">
+    <div class="gallery-caption">Interior renovation showing structural upgrades and framing.</div>
+  </div>
+
+  <div class="gallery-item fade-up" data-category="installations">
+    <img src="images/gallery_install_2.jpg">
+    <div class="gallery-caption">Fiber cement siding with precise trim installation.</div>
+  </div>
+
+  <div class="gallery-item fade-up" data-category="remodeling">
+    <img src="images/gallery_remodel_2.jpg">
+    <div class="gallery-caption">Open-plan remodel with theater setup and hardwood flooring.</div>
+  </div>
+
+  <div class="gallery-item fade-up" data-category="remodeling">
+    <img src="images/gallery_remodel_3.jpg">
+    <div class="gallery-caption">Modern kitchen remodel with quartz and subway tile.</div>
+  </div>
+
+</div>
