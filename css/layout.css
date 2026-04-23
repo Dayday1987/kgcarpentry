@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: background: var(--surface);
+  background: var(--surface);
 }
 
 .header-logo img {
