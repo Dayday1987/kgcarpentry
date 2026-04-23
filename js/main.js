@@ -247,3 +247,26 @@ lightbox.addEventListener("click", (e) => {
     lightbox.classList.remove("active");
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const serviceSlides = document.querySelectorAll(".services-slide");
+
+  // 🔥 STOP if not on services page
+  if (serviceSlides.length === 0) return;
+
+  let index = 0;
+
+  function showSlide(i) {
+    serviceSlides.forEach(slide => slide.classList.remove("active"));
+    serviceSlides[i].classList.add("active");
+  }
+
+  function nextSlide() {
+    index = (index + 1) % serviceSlides.length;
+    showSlide(index);
+  }
+
+  setInterval(nextSlide, 4000);
+
+});
