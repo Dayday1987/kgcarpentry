@@ -195,10 +195,6 @@ section.content + section.content {
 }
 
 /* ================================
-   GALLERY
-================================ */
-
-/* ================================
    GALLERY (MASONRY UPGRADE)
 ================================ */
 
@@ -206,6 +202,10 @@ section.content + section.content {
   column-count: 1;
   column-gap: 20px;
   margin-top: 30px;
+}
+
+.gallery-grid {
+  text-align: left;
 }
 
 /* Each item */
