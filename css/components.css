@@ -222,3 +222,25 @@ nav a:hover {
   }
 
 }
+
+/* FILTER BUTTONS */
+
+.gallery-filters {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.filter-btn {
+  padding: 10px 16px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  background: #eee;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #000;
+}
