@@ -336,26 +336,26 @@ section.content + section.content {
    QUOTE FORM
 ================================ */
 
-.quote-form {
-  max-width: 500px;
-  margin: 30px auto;
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.quote-form input,
-.quote-form textarea,
-.quote-form select {
+.form-group {
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
   padding: 12px;
-  border: 1px solid var(--border);
   border-radius: 6px;
-  font-size: 14px;
-}
-
-.quote-form textarea {
-  min-height: 120px;
-  resize: vertical;
+  border: 1px solid #ddd;
+  font-size: 16px;
 }
 
 /* ================================
