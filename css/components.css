@@ -92,11 +92,24 @@ nav a:hover {
   margin-top: 40px;
 }
 
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 -10px 30px rgba(0, 194, 168, 0.08);
+}
+
 .footer-logo {
   display: block;
   height: 70px;
   width: auto
   margin: 15px auto;
+}
+
+.footer-logo {
+  height: 70px;
+
+  filter: drop-shadow(0 0 6px rgba(0, 194, 168, 0.4));
 }
 
 .back-to-top {
@@ -119,19 +132,21 @@ nav a:hover {
   color: #fff;
 }
 
-.footer-contact {
-  margin: 10px 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
 .footer-contact a {
-  color: var(--accent); /* 🔥 matches your neon brand */
+  color: var(--accent);
   text-decoration: none;
+
+  /* 🔥 subtle glow */
+  text-shadow:
+    0 0 4px rgba(217,255,0,0.6),
+    0 0 8px rgba(217,255,0,0.4);
 }
 
+/* Slight interaction */
 .footer-contact a:hover {
-  opacity: 0.8;
+  text-shadow:
+    0 0 6px rgba(217,255,0,0.8),
+    0 0 12px rgba(217,255,0,0.6);
 }
 
 /* ================================
