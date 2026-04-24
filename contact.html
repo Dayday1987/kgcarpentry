@@ -26,23 +26,32 @@
     Tell us about your project and we’ll get back to you quickly.
   </p>
 
-  <form action="https://hooks.zapier.com/hooks/catch/27355263/uvo378l/" method="POST">
+  <form action="https://hooks.zapier.com/hooks/catch/27355263/uvo378l/" method="POST" class="contact-form">
 
-  <input type="text" name="Name" placeholder="Your Name" required>
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required>
+  </div>
 
-  <input type="tel" name="Phone" placeholder="Your Phone Number" required>
+  <div class="form-group">
+    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+  </div>
 
-  <select name="Service" required>
-    <option value="">Select a Service</option>
-    <option value="Framing">Framing</option>
-    <option value="Decks">Decks</option>
-    <option value="Additions">Additions</option>
-    <option value="Trim Work">Trim Work</option>
-    <option value="Renovations">Renovations</option>
-    <option value="Repairs">Repairs</option>
-  </select>
+  <div class="form-group">
+    <select name="service" required>
+      <option value="">Select a Service</option>
+      <option value="Framing">Framing</option>
+      <option value="Decks">Decks</option>
+      <option value="Additions">Additions</option>
+      <option value="Trim Work">Trim Work</option>
+      <option value="Renovations">Renovations</option>
+      <option value="Repairs">Repairs</option>
+      <option value="Installations">Installations</option>
+    </select>
+  </div>
 
-  <textarea name="Message" placeholder="Tell us about your project..." required></textarea>
+  <div class="form-group">
+    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+  </div>
 
   <button type="submit" class="cta-button">
     <span>Request a Quote</span>
