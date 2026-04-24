@@ -26,20 +26,23 @@
     Tell us about your project and we’ll get back to you quickly.
   </p>
 
-  <form id="quote-form" class="quote-form">
+  <form action="https://hooks.zapier.com/hooks/catch/27355263/uvo378l/" method="POST">
 
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="tel" name="phone" placeholder="Your Phone Number" required>
+  <input type="text" name="Name" placeholder="Your Name" required>
 
-  <select name="service">
-    <option value="">Select Service</option>
-    <option>Framing</option>
-    <option>Decks</option>
-    <option>Additions</option>
-    <option>Trim Work</option>
+  <input type="tel" name="Phone" placeholder="Your Phone Number" required>
+
+  <select name="Service" required>
+    <option value="">Select a Service</option>
+    <option value="Framing">Framing</option>
+    <option value="Decks">Decks</option>
+    <option value="Additions">Additions</option>
+    <option value="Trim Work">Trim Work</option>
+    <option value="Renovations">Renovations</option>
+    <option value="Repairs">Repairs</option>
   </select>
 
-  <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+  <textarea name="Message" placeholder="Tell us about your project..." required></textarea>
 
   <button type="submit" class="cta-button">
     <span>Request a Quote</span>
