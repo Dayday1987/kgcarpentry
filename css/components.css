@@ -85,12 +85,14 @@ nav a:hover {
 ================================ */
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 🔥 centers horizontally */
+  justify-content: center;
+
   text-align: center;
-  align-conten: center;
   padding: 40px 20px;
-  background: #000;
-  border-top: 1px solid #222;
-  margin-top: 40px;
+  background: black;
 }
 
 .footer {
@@ -102,13 +104,9 @@ nav a:hover {
 
 .footer-logo {
   display: block;
+  margin: 15px auto;  /* 🔥 ensures centering */
   height: 70px;
-  width: auto
-  margin: 15px auto;
 }
-
-.footer-logo {
-  height: 70px;
 
   filter: drop-shadow(0 0 6px rgba(0, 194, 168, 0.4));
 }
