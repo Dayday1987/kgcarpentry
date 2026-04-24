@@ -432,3 +432,10 @@ section.content + section.content {
 .fade-up:nth-child(5) { transition-delay: 0.5s; }
 .fade-up:nth-child(6) { transition-delay: 0.6s; }
 
+.header-logo + .content {
+  border-top: none !important;
+}
+
+.header-branding {
+  margin-top: 0;
+}
