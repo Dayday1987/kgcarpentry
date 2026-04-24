@@ -333,6 +333,32 @@ section.content + section.content {
 }
 
 /* ================================
+   QUOTE FORM
+================================ */
+
+.quote-form {
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.quote-form input,
+.quote-form textarea,
+.quote-form select {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.quote-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ================================
    CTA SPACING
 ================================ */
 
