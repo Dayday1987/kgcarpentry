@@ -83,6 +83,15 @@ section.content + section.content {
 .content:first-of-type {
   padding-top: 0;
 }
+
+.header-logo + .content {
+  border: none !important;
+}
+
+.header-logo + .content,
+.header-logo + .content * {
+  border-top: none !important;
+}
 /* ================================
    TYPOGRAPHY / HEADINGS
 ================================ */
