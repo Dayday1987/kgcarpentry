@@ -26,29 +26,26 @@
     Tell us about your project and we’ll get back to you quickly.
   </p>
 
-  <form action="https://formspree.io/f/xaqavooe" method="POST" class="quote-form">
+  <form id="quote-form" class="quote-form">
 
-    <input type="text" name="name" placeholder="Your Name" required>
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="tel" name="phone" placeholder="Your Phone Number" required>
 
-    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+  <select name="service">
+    <option value="">Select Service</option>
+    <option>Framing</option>
+    <option>Decks</option>
+    <option>Additions</option>
+    <option>Trim Work</option>
+  </select>
 
-    <select name="service">
-      <option value="">Select Service</option>
-      <option>Framing</option>
-      <option>Decks</option>
-      <option>Additions</option>
-      <option>Trim Work</option>
-      <option>Renovations</option>
-      <option>Repairs</option>
-    </select>
+  <textarea name="message" placeholder="Tell us about your project..." required></textarea>
 
-    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+  <button type="submit" class="cta-button">
+    <span>Request a Quote</span>
+  </button>
 
-    <button type="submit" class="cta-button">
-      <span>Request a Quote</span>
-    </button>
-
-  </form>
+</form>
 
 </section>
 
@@ -56,6 +53,24 @@
 
 <script src="js/loadComponents.js"></script>
 <script src="js/main.js"></script>
+<script>
+document.getElementById("quote-form").addEventListener("submit", function(e) {
+  e.preventDefault();
 
+  const formData = new FormData(this);
+
+  fetch("https://hooks.zapier.com/hooks/catch/27355263/uvo378l/", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => {
+    alert("Request sent! We'll contact you shortly.");
+    this.reset();
+  })
+  .catch(() => {
+    alert("Something went wrong. Please try again.");
+  });
+});
+</script>
 </body>
 </html>
