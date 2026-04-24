@@ -443,3 +443,34 @@ select {
   width: 100%;
   max-width: 100%;
 }
+
+.page-title,
+.about-title,
+.services-title {
+  font-family: 'Cinzel', serif;
+  font-size: 34px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 6px;
+
+  text-align: center;
+
+  margin-bottom: 10px;
+  color: var(--text);
+
+  position: relative;
+}
+
+/* underline accent */
+.page-title::after,
+.about-title::after,
+.services-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: 12px auto 0;
+}
