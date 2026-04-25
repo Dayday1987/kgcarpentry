@@ -422,6 +422,33 @@ section.content + section.content {
 }
 
 /* ================================
+      REVIEW PAGE
+================================ */
+
+.review-options a {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.review-options {
+  margin-top: 30px;
+}
+
+.review-options a:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .review-options a {
+    width: 100%;
+  }
+}
+
+
+
+/* ================================
    CTA SPACING
 ================================ */
 
