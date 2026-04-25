@@ -387,6 +387,22 @@ h3 {
 .review-slider .next {
   display: none;
 }
+
+/* ================================
+          REVIEW PAGE
+================================ */
+
+.review-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.review-options a {
+  font-size: 18px;
+}
+
 /* ================================
    RESPONSIVE
 ================================ */
